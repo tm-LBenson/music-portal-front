@@ -20,6 +20,10 @@ export default class App extends Component {
   checkLogin = (token) => {
     this.setState({ token: token })
   }
+
+
+
+
   render() {
     return (
       <React.Fragment>
@@ -28,7 +32,7 @@ export default class App extends Component {
 
           <React.Fragment >
             <NavDrawer />
-            <NavArea />
+            <NavArea token={this.state.token} />
             <Home />
           </React.Fragment>
         }
