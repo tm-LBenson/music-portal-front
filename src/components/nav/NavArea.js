@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import styles from './stylesheets/NavArea.module.css'
-import './stylesheets/drawer.css'
-import selfie from '../assets/selfie100px.png'
+import styles from '../stylesheets/NavArea.module.css'
+import '../stylesheets/drawer.css'
+import selfie from '../../assets/selfie100px.png'
 export default class NavArea extends Component {
   render() {
     return (
