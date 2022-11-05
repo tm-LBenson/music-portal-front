@@ -28,15 +28,13 @@ export default class SplashPage extends Component {
     }
   }
 
-  CLIENT_ID = '75b90235ba3f4956834f605c46d9d923'
-  REDIRECT_URI = "http://localhost:3000/"
-  AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
-  RESPONSE_TYPE = "token"
+
   render() {
-    console.log(this.state)
+    console.log(this.state?.token)
     return (
-      <main>
-        <h1><a href={`${this.AUTH_ENDPOINT}?client_id=${this.CLIENT_ID}&redirect_uri=${this.REDIRECT_URI}&response_type=${this.RESPONSE_TYPE}`}>Login to Spotify</a></h1>
+      <main className={styles.main}>
+
+        {!this.state?.token ? <h1><a href={`${process.env.REACT_APP_AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&response_type=${process.env.REACT_APP_RESPONSE_TYPE}`}>Login to Spotify</a></h1> : <h1>logged in</h1>}
       </main >
     )
   }
