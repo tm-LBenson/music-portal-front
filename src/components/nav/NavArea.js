@@ -32,7 +32,7 @@ export default class NavArea extends Component {
 
   }
   componentDidMount() {
-    this.getData()
+    // this.getData()
 
   }
 
