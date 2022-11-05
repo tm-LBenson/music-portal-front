@@ -8,6 +8,7 @@ export default class NavArea extends Component {
   constructor() {
     super()
     this.state = {
+
       profileName: '',
       profilePic: '',
 
@@ -19,12 +20,13 @@ export default class NavArea extends Component {
       url: 'https://api.spotify.com/v1/me',
       data: {},
       headers: {
-        'Authorization': 'Bearer ' + this.props.token,
+        'Authorization': 'Bearer ' + this.state.token,
         'accept': 'application/json',
         'Content-type': 'application/json',
       }
     })
       .then(data => this.setState({
+
         profileName: data.data.display_name,
         profilePic: data.data.images[0].url
       }))
@@ -32,8 +34,23 @@ export default class NavArea extends Component {
 
   }
   componentDidMount() {
-    // this.getData()
+    this.setState({ token: this.props.token }, () => {
+      console.log(this.state)
+    })
 
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.state)
+    if (prevProps.token !== prevState.token) {
+      console.log(this.props)
+      if (this.state.token) {
+        console.log('running')
+        this.getData()
+      }
+
+
+    }
   }
 
   render() {

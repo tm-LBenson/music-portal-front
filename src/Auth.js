@@ -1,5 +1,7 @@
 import { Component } from 'react'
 import axios from 'axios'
+
+/* THIS IS A HELPER COMPONENT THAT DOES NOT RENDER ANYTHING. ITS PURPOSE IS TO RETRIEVE AN ACCESS KEY FROM THE BACKEND */
 export default class Auth extends Component {
   constructor(props) {
     super(props)
@@ -8,34 +10,28 @@ export default class Auth extends Component {
 
   componentDidMount() {
 
-    this.setState(this.props)
-
-
-
-
-
+    this.setState(this.props) // SETTING STATE HERE TO FORCE AN UPDATE AND HAVE ACCESS TO PREVPROPS TO PREVENT ERASING ACCESS KEY
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps, 'ppp')
     if (prevProps.code !== prevState.code) {
-      console.log('update')
       axios
         .post("http://localhost:3001/login", { code: this.state.code })
         .then(res => {
           this.setState({
             code: '',
-            accessToken: res.data.accessToken,
-            refreshToken: res.data.refreshToken,
-            expiresIn: res.data.expiresIn
-
-          }, this.props.onGetToken(this.state))
+            accessToken: res.data.accessToken, //THIS IS REQUIRED FOR API CALLS TO SPOTIFY
+            refreshToken: res.data.refreshToken, //KEYS EXPIRE AFTER 1 HOUR, THIS KEY CAN REFRESH THE ACCESS KEY AUTOMATICALLY
+            expiresIn: res.data.expiresIn // TIME LEFT ON THE KEY
+          }) // SENDING ACCESS TOKEN TO PARENT ELEMENT
         }).catch(error => {
           console.log(error, ' local API error')
-          // window.location = '/'
+          window.location = '/'  //THIS LINE SENDS BACK TO LOGIN SCREEN IF KEY EXPIRES
         })
     }
-    console.log(this.state)
+    if (this.state.accessToken) {
+      this.props.onGetToken(this.state.accessToken)
+    }
   }
 
   render() {

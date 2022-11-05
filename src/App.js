@@ -9,6 +9,7 @@ import Home from './components/home/Home'
 import SplashPage from './components/splashPage/SplashPage'
 import Auth from './Auth';
 
+
 const code = new URLSearchParams(window.location.search).get("code")
 
 export default class App extends Component {
@@ -23,20 +24,21 @@ export default class App extends Component {
     this.setState({ token: token })
   }
 
-  getToken = (data) => {
-    console.log(data)
+  getToken = (token) => {
+    this.setState({ token: token })
   }
 
   render() {
+
     return (
       <React.Fragment>
 
         {!code ? <SplashPage checkLogin={this.checkLogin} /> :
 
           <React.Fragment >
-            <Auth onGetToken={this.getToken} code={code} />
+            {!this.state.token ? <Auth onGetToken={this.getToken} code={code} /> : null}
             <NavDrawer />
-            <NavArea token={code} />
+            {this.state.token ? <NavArea token={this.state.token} /> : null}
             <Home />
           </React.Fragment>
         }
