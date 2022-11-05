@@ -24,13 +24,15 @@ export default class SplashPage extends Component {
 
       this.setState({
         token: _token
+      }, () => {
+        this.props.checkLogin(this.state.token)
       });
     }
   }
 
 
   render() {
-    console.log(this.state?.token)
+
     return (
       <main className={styles.main}>
 
