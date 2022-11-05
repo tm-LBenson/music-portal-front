@@ -8,24 +8,36 @@ export default class Auth extends Component {
 
   componentDidMount() {
 
-    if (!this.props.code) {
-      this.setState({ code: this.props.code })
-      console.log('getting token')
+    this.setState(this.props)
+
+
+
+
+
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps, 'ppp')
+    if (prevProps.code !== prevState.code) {
+      console.log('update')
       axios
         .post("http://localhost:3001/login", { code: this.state.code })
         .then(res => {
           this.setState({
-            code: this.props.code,
+            code: '',
             accessToken: res.data.accessToken,
             refreshToken: res.data.refreshToken,
             expiresIn: res.data.expiresIn
-          }, console.log('called local api finished'))
+
+          }, this.props.onGetToken(this.state))
         }).catch(error => {
           console.log(error, ' local API error')
           // window.location = '/'
         })
     }
+    console.log(this.state)
   }
+
   render() {
     return (
       null

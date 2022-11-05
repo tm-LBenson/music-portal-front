@@ -8,7 +8,9 @@ import NavArea from './components/nav/NavArea'
 import Home from './components/home/Home'
 import SplashPage from './components/splashPage/SplashPage'
 import Auth from './Auth';
+
 const code = new URLSearchParams(window.location.search).get("code")
+
 export default class App extends Component {
   constructor() {
     super()
@@ -21,6 +23,10 @@ export default class App extends Component {
     this.setState({ token: token })
   }
 
+  getToken = (data) => {
+    console.log(data)
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -28,7 +34,7 @@ export default class App extends Component {
         {!code ? <SplashPage checkLogin={this.checkLogin} /> :
 
           <React.Fragment >
-            <Auth code={code} />
+            <Auth onGetToken={this.getToken} code={code} />
             <NavDrawer />
             <NavArea token={code} />
             <Home />
