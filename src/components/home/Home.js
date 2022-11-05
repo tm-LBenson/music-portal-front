@@ -5,6 +5,7 @@ export default class Home extends Component {
 
 
   render() {
+    window.history.pushState({}, null, '/') // clear the browser URL of text 
     return (
       <main className='wrapper'>
         <section className='col-1'>

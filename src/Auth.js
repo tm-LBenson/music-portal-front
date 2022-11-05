@@ -15,6 +15,7 @@ export default class Auth extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.code !== prevState.code) {
+    
       axios
         .post("http://localhost:3001/login", { code: this.state.code })
         .then(res => {
@@ -23,14 +24,14 @@ export default class Auth extends Component {
             accessToken: res.data.accessToken, //THIS IS REQUIRED FOR API CALLS TO SPOTIFY
             refreshToken: res.data.refreshToken, //KEYS EXPIRE AFTER 1 HOUR, THIS KEY CAN REFRESH THE ACCESS KEY AUTOMATICALLY
             expiresIn: res.data.expiresIn // TIME LEFT ON THE KEY
-          }) // SENDING ACCESS TOKEN TO PARENT ELEMENT
+          })
         }).catch(error => {
           console.log(error, ' local API error')
           window.location = '/'  //THIS LINE SENDS BACK TO LOGIN SCREEN IF KEY EXPIRES
         })
     }
     if (this.state.accessToken) {
-      this.props.onGetToken(this.state.accessToken)
+      this.props.onGetToken(this.state.accessToken) // SENDING ACCESS TOKEN TO PARENT ELEMENT
     }
   }
 
