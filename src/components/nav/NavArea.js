@@ -14,7 +14,6 @@ export default class NavArea extends Component {
     }
   }
   getData = async () => {
-    console.log(this.props.token)
     await axios({
       method: 'get', //you can set what request you want to be
       url: 'https://api.spotify.com/v1/me',
@@ -32,20 +31,12 @@ export default class NavArea extends Component {
       .catch(error => console.log(error))
 
   }
-
   componentDidMount() {
     this.getData()
 
   }
-  componentDidUpdate() {
-    console.log(this.state)
-  }
 
   render() {
-
-
-
-
 
     return (
       <section className={styles.nav}>
