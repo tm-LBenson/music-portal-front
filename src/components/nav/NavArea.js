@@ -14,7 +14,7 @@ export default class NavArea extends Component {
     }
   }
   getData = async () => {
-
+    console.log(this.props.token)
     await axios({
       method: 'get', //you can set what request you want to be
       url: 'https://api.spotify.com/v1/me',

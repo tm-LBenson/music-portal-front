@@ -7,8 +7,7 @@ import NavDrawer from './components/nav/NavDrawer';
 import NavArea from './components/nav/NavArea'
 import Home from './components/home/Home'
 import SplashPage from './components/splashPage/SplashPage' //TODO conditional rendering after login
-
-
+const code = new URLSearchParams(window.location.search).get("code")
 export default class App extends Component {
   constructor() {
     super()
@@ -28,11 +27,11 @@ export default class App extends Component {
     return (
       <React.Fragment>
 
-        {!this.state.token ? <SplashPage checkLogin={this.checkLogin} /> :
+        {!code ? <SplashPage checkLogin={this.checkLogin} /> :
 
           <React.Fragment >
             <NavDrawer />
-            <NavArea token={this.state.token} />
+            <NavArea token={code} />
             <Home />
           </React.Fragment>
         }
