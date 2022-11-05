@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import HeroTagLine from './HeroTagLine'
+
 export default class Home extends Component {
+
+
   render() {
     return (
       <main className='wrapper'>

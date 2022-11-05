@@ -20,4 +20,5 @@
 
 .nav__profile-pic--img {
   border-radius: 100%;
+  width: 100px;
 }
