@@ -9,12 +9,14 @@ import SplashPage from './components/splashPage/SplashPage' //TODO conditional r
 function App() {
   return (
     <React.Fragment>
-
-      <NavDrawer />
-      <NavArea />
-      <Home />
+      <SplashPage />
     </React.Fragment>
   );
 }
 
 export default App;
+<React.Fragment >
+  <NavDrawer />
+  <NavArea />
+  <Home />
+</React.Fragment>
