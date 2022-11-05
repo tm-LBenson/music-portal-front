@@ -1,8 +1,14 @@
-import styles from './components/stylesheets/App.module.css'
+import './components/stylesheets/App.css'
 import './components/stylesheets/reset.css'
+import NavDrawer from './components/NavDrawer';
+import NavArea from './components/NavArea'
+import React from 'react';
 function App() {
   return (
-    <h1>proof of life</h1>
+    <React.Fragment>
+      <NavDrawer />
+      <NavArea />
+    </React.Fragment>
   );
 }
 
