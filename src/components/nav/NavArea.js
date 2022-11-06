@@ -34,18 +34,14 @@ export default class NavArea extends Component {
 
   }
   componentDidMount() {
-    this.setState({ token: this.props.token }, () => {
-      console.log(this.state)
-    })
+    this.setState({ token: this.props.token })
 
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(this.state)
+
     if (prevProps.token !== prevState.token) {
-      console.log(this.props)
       if (this.state.token) {
-        console.log('running')
         this.getData()
       }
 

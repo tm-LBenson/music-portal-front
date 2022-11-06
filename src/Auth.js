@@ -15,7 +15,7 @@ export default class Auth extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.code !== prevState.code) {
-    
+
       axios
         .post("http://localhost:3001/login", { code: this.state.code })
         .then(res => {
@@ -23,19 +23,45 @@ export default class Auth extends Component {
             code: '',
             accessToken: res.data.accessToken, //THIS IS REQUIRED FOR API CALLS TO SPOTIFY
             refreshToken: res.data.refreshToken, //KEYS EXPIRE AFTER 1 HOUR, THIS KEY CAN REFRESH THE ACCESS KEY AUTOMATICALLY
-            expiresIn: res.data.expiresIn // TIME LEFT ON THE KEY
+            expiresIn: 65 // TIME LEFT ON THE KEY
           })
         }).catch(error => {
           console.log(error, ' local API error')
           window.location = '/'  //THIS LINE SENDS BACK TO LOGIN SCREEN IF KEY EXPIRES
         })
     }
+
+    /* BELOW IS THE BLOCK FOR REFRESHING THE TOKEN AUTOMATICALLY 60 SECONDS BEFORE IT EXPIRES */
     if (this.state.accessToken) {
       this.props.onGetToken(this.state.accessToken) // SENDING ACCESS TOKEN TO PARENT ELEMENT
     }
+    if (!this.state.refreshToken || !this.state.expiresIn) return
+    console.log(this.state.refreshToken)
+    const interval = setInterval(() => {
+      axios
+        .post("http://localhost:3001/refresh", {
+          refreshToken: this.state.refreshToken,
+        })
+        .then(res => {
+          console.log(res.data)
+          this.setState({
+            accessToken: res.data.accessToken,
+            expiresIn: res.data.expiresIn
+          })
+        })
+        .catch((error) => {
+          console.log(error.message)
+          window.location = "/"
+        })
+    }, (this.state.expiresIn - 60) * 1000) //HOW MUCH TIME BEFORE TOKEN EXPIRES 
+
+    return () => clearInterval(interval)
+
   }
 
+
   render() {
+    console.log(this.state)
     return (
       null
     )
