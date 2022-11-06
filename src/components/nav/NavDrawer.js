@@ -11,10 +11,11 @@ export default class NavDrawer extends Component {
 
         <div className="pure-drawer" data-position="right">
           THIS IS INSIDE THE DRAWER
+      
         </div>
         <div className="pure-pusher-container">
           <div className="pure-pusher">
-
+ 
           </div>
         </div>
         <label className="pure-overlay" htmlFor="pure-toggle-right" data-overlay="right"></label>

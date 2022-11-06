@@ -53,11 +53,12 @@ export default class NavArea extends Component {
 
     return (
       <section className={styles.nav}>
-        <figure className={styles.nav__logo}>
-          LOGO
-        </figure>
+          <img className={styles.nav__logo} src= '.src./img/logo1.png' alt='logo' />
+
         <figure className={styles['nav__profile-pic']}>
           <img className={styles['nav__profile-pic--img']} src={this.state.profilePic} alt='' />
+        </figure>
+        <figure>
         </figure>
       </section>
     )
