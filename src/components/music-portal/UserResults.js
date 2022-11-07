@@ -10,7 +10,7 @@ export default class Results extends Component {
       <Accordion.Header>
         Test Item
     </Accordion.Header>
-    <Accordion.Body>Body Test dshiufhdseawiufhedwiufheuwiohfewuiofheuiwhfuiewhfuiewhfuiewhfhewufhuwehfiuhewfiuhewfiuhew</Accordion.Body>
+    <Accordion.Body>Body Test </Accordion.Body>
     </Accordion.Item>
     </Accordion>
       

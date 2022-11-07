@@ -57,7 +57,7 @@ export default class App extends Component {
             <React.Fragment >
             <NavArea />
               {this.state.token ? <NavDrawer token={this.state.token} /> : null}
-              < MusicPortal />
+              {this.state.token ? <MusicPortal token={this.state.token} /> : null}
             </React.Fragment>
           } />
    <Route path='/logout' element={

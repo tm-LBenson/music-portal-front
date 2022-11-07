@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import PortalForm from './Portalsearch'
-import UserForm from './Usertop25'
-import UserTop from './UserResults'
+import UserResults from './UserResults'
 import Song from '../../Song'
 import styles from '../stylesheets/MusicPortal.module.css'
-import Searchbar from '../home/Searchbar'
 import { Container } from 'react-bootstrap'
+import Usertop25 from './Usertop25'
 
 export default class MusicPortal extends Component {
   render() {
@@ -14,10 +13,11 @@ export default class MusicPortal extends Component {
         <section className={styles['col-1']}>
       <div>Column1</div>
       <div>
-      <UserForm />
-<div className={styles['play-list']}><UserTop /></div>
+
+<div className={styles['play-list']}> <Usertop25 token={this.props.token}/></div>
   
     </div>
+    <UserResults/>
       </section>
       <section className={styles['col-2']}>
       <div>Column2</div>
