@@ -65,4 +65,4 @@ export default class App extends Component {
       </React.Fragment>
     )
   }
-
+}
