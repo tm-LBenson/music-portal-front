@@ -3,6 +3,7 @@
   --nav-text: rgb(33, 33, 76);
   --success: rgb(48, 175, 48);
   --body-background: rgb(180, 180, 180);
+  --drawer-text: rgb(180, 180, 180);
 
   /* drawer colors are not currently connected to the variables, these are here for reference */
   --drawerBlue: #5d809d;
@@ -12,4 +13,3 @@
 body {
   background-color: var(--body-background);
 }
-
