@@ -1,7 +1,57 @@
 import React, { Component } from 'react'
 import '../stylesheets/drawer.css'
-import { Link, useMatch, useResolvedPath } from "react-router-dom"
+
+import styles from '../stylesheets/NavDrawer.module.css'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+
 export default class NavDrawer extends Component {
+  constructor() {
+    super()
+    this.state = {
+
+      profileName: '',
+      profilePic: '',
+
+    }
+  }
+  getData = async () => {
+    await axios({
+      method: 'get', //you can set what request you want to be
+      url: 'https://api.spotify.com/v1/me',
+      data: {},
+      headers: {
+        'Authorization': 'Bearer ' + this.state.token,
+        'accept': 'application/json',
+        'Content-type': 'application/json',
+      }
+    })
+      .then(data => this.setState({
+
+        profileName: data.data.display_name,
+        profilePic: data.data.images[0].url
+      }))
+      .catch(error => console.log(error))
+
+  }
+  componentDidMount() {
+    this.setState({ token: this.props.token })
+
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+
+    if (prevProps.token !== prevState.token) {
+      if (this.state.token) {
+        this.getData()
+      }
+
+
+    }
+  }
+
+
+
   render() {
     return (
       <div className="pure-container" data-effect="pure-effect-slide">
@@ -10,36 +60,45 @@ export default class NavDrawer extends Component {
           <span className="pure-toggle-icon"></span>
         </label>
 
-        <div className="pure-drawer" data-position="right">
-          THIS IS INSIDE THE DRAWER
-          <nav className='nav'>
-            <Link to="/" className="Site-Title">Portal Inc.</Link>
-            <ul>
+        <div className={`pure-drawer ${styles.drawer}`} data-position="right">
+          <figure className={styles['nav__profile-pic']}>
+            <img className={styles['nav__profile-pic--img']} src={this.state.profilePic} alt='' />
+          </figure>
+          <ul className={styles.drawer__links}>
+            <div className={styles['drawer__links--top']}>
               <li>
-                <CustomLink to="/about">About</CustomLink>
+                <Link to='/'>
+                  Home
+                </Link>
               </li>
-            </ul>
-          </nav>
-        </div>
+              <li>
+                <Link to='/music-portal'>
+                  Music Portal
+                </Link>
+              </li>
+              <li>
+                <Link to='/about'>
+                  About
+                </Link>
+              </li>
+            </div>
+            <li>
+              <Link to='/logout'>
+                Logout
+              </Link>
+            </li>
+          </ul>
+        </div >
+
         <div className="pure-pusher-container">
           <div className="pure-pusher">
 
           </div>
         </div>
         <label className="pure-overlay" htmlFor="pure-toggle-right" data-overlay="right"></label>
-      </div>
+      </div >
     )
   }
 }
 
-function CustomLink({ to, children, ...props }) {
-  const resolvedPath = useResolvedPath(to)
-  const isActive = useMatch({path: resolvedPath.pathname, end: true })
-  return (
-    <li className={isActive ? "active" : ""}>
-      <Link to={to} {...props}>
-        {children}
-    </Link>
-    </li>
-  )
-}
+
