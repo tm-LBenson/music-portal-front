@@ -7,16 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 3px 3px 6px #333;
 }
 
 .nav__logo {
   margin-left: 5rem;
-}
-
-.nav__profile-pic {
-  margin-right: 120px;
-}
-
-.nav__profile-pic--img {
-  border-radius: 100%;
 }
