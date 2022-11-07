@@ -4,7 +4,7 @@
   --success: rgb(48, 175, 48);
   --body-background: rgb(52, 52, 52);
   --drawer-text: rgb(180, 180, 180);
-
+  --footer-background: rgb(0, 255, 140);
 
   /* drawer colors are not currently connected to the variables, these are here for reference */
   --drawerBlue: #000000;
