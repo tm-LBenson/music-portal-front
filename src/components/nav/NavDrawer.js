@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import '../stylesheets/drawer.css'
+
 import styles from '../stylesheets/NavDrawer.module.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+
 export default class NavDrawer extends Component {
   constructor() {
     super()
@@ -87,6 +89,7 @@ export default class NavDrawer extends Component {
             </li>
           </ul>
         </div >
+
         <div className="pure-pusher-container">
           <div className="pure-pusher">
 
@@ -97,3 +100,5 @@ export default class NavDrawer extends Component {
     )
   }
 }
+
+

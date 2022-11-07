@@ -9,10 +9,12 @@ export default class NavArea extends Component {
 
     return (
       <section className={styles.nav}>
+
         <figure className={styles.nav__logo}>
           LOGO
         </figure>
       
+
       </section>
     )
   }
