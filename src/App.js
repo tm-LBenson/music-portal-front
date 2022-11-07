@@ -56,11 +56,16 @@ export default class App extends Component {
           } />
           <Route path='/music-portal' element={
             <React.Fragment >
+            <NavArea />
               {this.state.token ? <NavDrawer token={this.state.token} /> : null}
               {this.state.token ? < MusicPortal /> : null}
 
             </React.Fragment>
           } />
+
+   <Route path='/logout' element={
+          < SplashPage />
+   }/>
         </Routes>
         {this.state.token ? <Footer trackUri={this.trackUri} token={this.state.token} /> : null}
       </React.Fragment>

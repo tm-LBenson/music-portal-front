@@ -53,6 +53,7 @@ export default class NavDrawer extends Component {
 
 
   render() {
+    console.log(this.state.token)
     return (
       <div className="pure-container" data-effect="pure-effect-slide">
         <input type="checkbox" id="pure-toggle-right" className="pure-toggle" data-toggle="right" />
