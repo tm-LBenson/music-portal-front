@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import styles from '../stylesheets/HeroTagLine.module.css'
 
-const Motd = 'Find solace in music.'
-const smallMotd = 'Live life in full harmony.'
+const Motd = 'Find Solace in Music.'
+const smallMotd = 'Embrace Harmony.'
 export default class HeroTagLine extends Component {
   render() {
     return (

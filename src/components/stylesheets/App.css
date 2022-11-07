@@ -1,13 +1,14 @@
 :root {
-  --nav-background: rgb(238, 82, 82);
+  --nav-background: rgb(0, 255, 140);
   --nav-text: rgb(33, 33, 76);
   --success: rgb(48, 175, 48);
-  --body-background: rgb(180, 180, 180);
+  --body-background: rgb(52, 52, 52);
   --drawer-text: rgb(180, 180, 180);
 
+
   /* drawer colors are not currently connected to the variables, these are here for reference */
-  --drawerBlue: #5d809d;
-  --drawerGreen: #75e6c2;
+  --drawerBlue: #000000;
+  --drawerGreen: rgb(0, 255, 140);
 }
 
 body {

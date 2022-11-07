@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import './components/stylesheets/reset.css'
 import './components/stylesheets/App.css'
 import './components/stylesheets/home.css'
@@ -29,6 +28,7 @@ export default class App extends Component {
   getToken = (token) => {
     this.setState({ token: token })
   }
+
 
   render() {
 
@@ -65,5 +65,4 @@ export default class App extends Component {
       </React.Fragment>
     )
   }
-}
 
