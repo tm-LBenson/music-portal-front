@@ -80,7 +80,6 @@ export default class NavDrawer extends Component {
                 </Link>
               </li>
             </div>
-
             <li>
               <Link to='/logout'>
                 Logout

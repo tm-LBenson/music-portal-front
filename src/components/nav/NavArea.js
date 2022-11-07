@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styles from '../stylesheets/NavArea.module.css'
 import '../stylesheets/drawer.css'
 
-import axios from 'axios'
 export default class NavArea extends Component {
 
  
@@ -18,3 +17,4 @@ export default class NavArea extends Component {
     )
   }
 }
+ 
