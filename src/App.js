@@ -58,7 +58,8 @@ export default class App extends Component {
             <React.Fragment >
             <NavArea />
               {this.state.token ? <NavDrawer token={this.state.token} /> : null}
-              {this.state.token ? < MusicPortal /> : null}
+
+              {this.state.token ? <MusicPortal token={this.state.token} /> : null}
 
             </React.Fragment>
           } />
