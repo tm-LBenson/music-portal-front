@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../stylesheets/drawer.css'
-
 import styles from '../stylesheets/NavDrawer.module.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -53,7 +52,7 @@ export default class NavDrawer extends Component {
 
 
   render() {
-    console.log(this.state.token)
+    // console.log(this.state.token)
     return (
       <div className="pure-container" data-effect="pure-effect-slide">
         <input type="checkbox" id="pure-toggle-right" className="pure-toggle" data-toggle="right" />
