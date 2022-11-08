@@ -7,17 +7,32 @@ import { Container } from 'react-bootstrap'
 import Usertop25 from './Usertop25'
 
 export default class MusicPortal extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: []
+      
+    }
+  }
+
+  handleData = (data) => 
+  {
+    let topResults = data.items.map(item => item)
+    this.setState({data: topResults})
+  }
+
   render() {
+    // console.log(this.state.data)
     return (
       <main className={styles['wrapper']}>
         <section className={styles['col-1']}>
       <div>Column1</div>
       <div>
 
-<div className={styles['play-list']}> <Usertop25 token={this.props.token}/></div>
+<div className={styles['play-list']}> <Usertop25 handleData={this.handleData} token={this.props.token}/></div>
   
     </div>
-    <UserResults/>
+    <UserResults topUserData={this.state.data}/>
       </section>
       <section className={styles['col-2']}>
       <div>Column2</div>

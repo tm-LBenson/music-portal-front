@@ -22,7 +22,6 @@ export default class Usertop25 extends Component {
 
   getData = async (e) => {
     e.preventDefault();
-    console.log(this.state.type)
     let type = this.state.type
     let timeRange = this.state.timeRange;
     await axios({
@@ -40,7 +39,10 @@ export default class Usertop25 extends Component {
         UserTop: data.data
         // trackData: data.
 
-      }))
+      },
+      () => {
+        this.props.handleData(this.state.UserTop)
+      } ))
 
       .catch(error => console.log(error))
 
@@ -62,10 +64,10 @@ export default class Usertop25 extends Component {
   // }
 
   render() {
-    console.log(this.state)
+
     return (
       <React.Fragment>
-        <p>User's Top 25</p>
+        <p>Your Favorites!</p>
         <Form onSubmit={this.getData}>
           <Form.Group className="mb-3" controlId="Type">
 
