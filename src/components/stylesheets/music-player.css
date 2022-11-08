@@ -1,0 +1,25 @@
+/* player wrapper */
+.PlayerRSWP {
+  background-color: var(--footer-background) !important;
+}
+
+/* player slider */
+._SliderRSWP > div > div {
+}
+
+/* slider handle */
+span[aria-label='slider handle'] {
+}
+
+/* song details area */
+._InfoRSWP {
+}
+
+/* area around play button */
+._ControlsRSWP {
+}
+
+/* svg icons: play button, volume, devices */
+path[fill='currentColor'] {
+  color: var(--footer-icons);
+}

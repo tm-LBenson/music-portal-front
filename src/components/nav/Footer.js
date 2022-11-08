@@ -21,7 +21,7 @@ export default class Footer extends Component {
 
     if (prevProps.token !== prevState.token) {
       if (this.state.token) {
-        console.log('got it')
+        console.log('placeholder')
       }
 
 
@@ -34,6 +34,7 @@ export default class Footer extends Component {
     return (
       <footer className={styles.footer}>
         <SpotifyWebPlayer
+
           token={this.state.token}
           showSaveIcon
           callback={state => {
