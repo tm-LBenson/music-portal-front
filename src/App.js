@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './components/stylesheets/reset.css'
 import './components/stylesheets/App.css'
-import './components/stylesheets/home.css'
 import NavDrawer from './components/nav/NavDrawer';
 import NavArea from './components/nav/NavArea'
 import Home from './components/home/Home'
