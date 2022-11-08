@@ -5,15 +5,16 @@ import DeveloperTrace from './DeveloperTrace';
 import DeveloperZoe from './DeveloperZoe';
 import styles from '../stylesheets/About.module.css';
 
-class Developers extends Component {
+
+export default class Developers extends Component {
   render() {
     return (
       <>
-      <div classname={styles.devColumn1}>
+      <div className={styles['dev-row-1']}>
         <DeveloperLewis />
         <DeveloperSteven />
         </div>
-        <div classname={styles.devColumn2}>
+        <div className={styles['dev-row-2']}>
         <DeveloperTrace />
         <DeveloperZoe />
         </div>
@@ -22,4 +23,3 @@ class Developers extends Component {
   }
 }
 
-export default Developers;
