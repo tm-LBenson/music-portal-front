@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import HeroTagLine from './HeroTagLine'
 import Customtrack from './Customtrack.js'
-import Song from './Song'
+import Song from '../../Song'
 import Searchbar from './Searchbar'
 
 export default class Home extends Component {
