@@ -21,8 +21,16 @@ export default class MusicPortal extends Component {
     this.setState({data: topResults})
   }
 
+  componentDidUpdate(prevProps) {
+
+    if (!prevProps.data[0]?.name) {
+
+    this.props.pushData(this.state.data)
+  }
+}
+
   render() {
-    // console.log(this.state.data)
+    console.log(this.state.data)
     return (
       <main className={styles['wrapper']}>
         <section className={styles['col-1']}>
