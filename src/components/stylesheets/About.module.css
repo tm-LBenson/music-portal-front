@@ -1,0 +1,26 @@
+.About main{
+  display: flex;
+}
+
+.aboutContainer1{
+  display: flex;
+  justify-items: space-evenly;
+}
+
+.aboutContainer2{
+  display: flex;
+}
+
+.devContainer{
+ display: flex;
+}
+
+.devColumn1{
+  display: flex;
+}
+
+.missionAlert{
+ max-width: 40%;
+ max-height: 20%;
+}
+
