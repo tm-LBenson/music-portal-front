@@ -35,10 +35,7 @@ export default class Usertop25 extends Component {
       }
     })
       .then(data => this.setState({
-
         UserTop: data.data
-        // trackData: data.
-
       },
       () => {
         this.props.handleData(this.state.UserTop)
