@@ -11,6 +11,7 @@ import SplashPage from './components/splashPage/SplashPage'
 import Footer from './components/nav/Footer'
 import Auth from './Auth';
 import { Route, Routes } from 'react-router-dom';
+import axios from 'axios';
 
 const code = new URLSearchParams(window.location.search).get("code")
 
@@ -19,7 +20,8 @@ export default class App extends Component {
     super()
     this.state = {
       token: '',
-      data: {}
+      data: {},
+      topData: []
     }
   }
 
@@ -30,7 +32,30 @@ export default class App extends Component {
   getToken = (token) => {
     this.setState({ token: token })
   }
+
+  handleData = (topData) => 
+  {
+    this.setState({topData: topData})
+  }
+
+  postUserData = async (obj) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/user-results`;
+
+      let dataPost = await axios.post(url, obj);
+      
+      this.setState({
+        topData: [...this.state.topData, dataPost.data]
+      })
+      
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
   trackUri = 'spotify:artist:3HkwxR8PuBf5hvumgsfByJ'
+
+
 
   render() {
 
@@ -60,7 +85,7 @@ export default class App extends Component {
             <NavArea />
               {this.state.token ? <NavDrawer token={this.state.token} /> : null}
 
-              {this.state.token ? <MusicPortal token={this.state.token} /> : null}
+              {this.state.token ? <MusicPortal data={this.state.topData} pushData={this.handleData} token={this.state.token} /> : null}
 
             </React.Fragment>
           } />
