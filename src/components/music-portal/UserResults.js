@@ -7,8 +7,10 @@ export default class Results extends Component {
   render() {
 
     let topResults = this.props.topUserData.map(item => {
-      console.log(item.artists)
-      return <UserOutput ArtistName={item.name}TrackArtist={item.artists[0].name}/>
+      console.log(item)
+      return  item.duration_ms ? <UserOutput ArtistName={item.name} TrackArtist={item.artists[0].name}/> : <UserOutput ArtistName={item.name} TrackArtist=''/>
+     
+      
     })
     
 
