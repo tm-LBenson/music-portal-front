@@ -12,7 +12,6 @@ import Auth from './Auth';
 import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import './components/stylesheets/music-player.css'
-
 const code = new URLSearchParams(window.location.search).get("code")
 
 export default class App extends Component {
@@ -37,6 +36,8 @@ export default class App extends Component {
     this.setState({ topData: topData })
   }
 
+
+
   postUserData = async (obj) => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/user-results`;
@@ -54,8 +55,6 @@ export default class App extends Component {
 
   trackUri = 'spotify:artist:3HkwxR8PuBf5hvumgsfByJ'
 
-
-
   render() {
 
     return (
@@ -67,8 +66,7 @@ export default class App extends Component {
                 {!this.state.token ? <Auth onGetToken={this.getToken} code={code} /> : null}
                 <NavArea />
                 {this.state.token ? <NavDrawer token={this.state.token} /> : null}
-                {this.state.token ? <Home /> : null}
-
+                {this.state.token ? <Home token={this.state.token} /> : null}
               </React.Fragment>
           } />
 
@@ -76,14 +74,12 @@ export default class App extends Component {
             <React.Fragment>
               {this.state.token ? <NavDrawer token={this.state.token} /> : null}
               {this.state.token ? < About /> : null}
-
             </React.Fragment>
           } />
           <Route path='/music-portal' element={
             <React.Fragment >
               <NavArea />
               {this.state.token ? <NavDrawer token={this.state.token} /> : null}
-
               {this.state.token ? <MusicPortal data={this.state.topData} pushData={this.handleData} token={this.state.token} /> : null}
 
             </React.Fragment>
