@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PortalForm from './Portalsearch'
 import UserResults from './UserResults'
-import Song from '../../Song'
+import Recs from './Recs'
 import styles from '../stylesheets/MusicPortal.module.css'
 import { Container } from 'react-bootstrap'
 import Usertop25 from './Usertop25'
@@ -10,8 +10,8 @@ export default class MusicPortal extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: []
-      
+      data: [],
+      songRec: []
     }
   }
 
@@ -21,16 +21,17 @@ export default class MusicPortal extends Component {
     this.setState({data: topResults})
   }
 
-  componentDidUpdate(prevProps) {
+  handleRec = (data) => 
+  {
+    
 
-    if (!prevProps.data[0]?.name) {
-
-    this.props.pushData(this.state.data)
+    let name = data.tracks.map(item => item)
+    this.setState({songRec: name})
   }
-}
+
 
   render() {
-    console.log(this.state.data)
+    // console.log(this.state.data)
     return (
       <main className={styles['wrapper']}>
         <section className={styles['col-1']}>
@@ -45,16 +46,13 @@ export default class MusicPortal extends Component {
       <section className={styles['col-2']}>
       <div>Column2</div>
       <div className={styles['col-2-1']}>
-      < PortalForm />
+      < PortalForm token={this.props.token} 
+      handleRec={this.handleRec} pushData={this.props.pushData}/>
       
 
       <section className={styles['cards']}>
-            <div className={styles['card']}>< Song /></div>
-            <div className={styles['card']}>< Song /></div>
-            <div className={styles['card']}>< Song /></div>
-            <div className={styles['card']}>< Song /></div>
-            <div className={styles['card']}>< Song /></div>
-            <div className={styles['card']}>< Song /></div>
+            <div className={styles['card']}>< Recs songData={this.state.songRec} /></div>
+
           </section>
       </div>
       </section>
