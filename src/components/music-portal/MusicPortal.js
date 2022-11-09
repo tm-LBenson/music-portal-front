@@ -44,7 +44,7 @@ export default class MusicPortal extends Component {
 
 <div className={styles['play-list']}> <Usertop25 handleData={this.handleData} token={this.props.token}/></div>
   
-    </div>
+
     <UserResults topUserData={this.state.data} />
       </section>
       <section className={styles['col-2']}>
