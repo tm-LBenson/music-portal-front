@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import HeroTagLine from './HeroTagLine'
 import Customtrack from './Customtrack.js'
+import styles from '../stylesheets/Home.module.css'
 import Song from '../../Song'
 import Searchbar from './Searchbar'
 import axios from 'axios'
@@ -58,27 +59,27 @@ export default class Home extends Component {
 
     window.history.pushState({}, null, '/') // clear the browser URL of text 
     return (
-      <main className='wrapper'>
-        <section className='col-1'>
-          <div className='video'></div>
+      <main className={styles['wrapper']}>
+        <section className={styles['col-1']}>
+          <div className={styles['video']}></div>
           <div className='text-center' style={{ whiteSpace: 'pre' }}>{this.state.lyricsData[0]}</div>
         </section>
-        <section className='col-2'>
+        <section className={styles['col-2']}>
           <HeroTagLine />
-          <div className='hero__trending'>Trending</div>
-          <section className='cards'>
-            <div className='card'>< Song /></div>
-            <div className='card'>< Song /></div>
-            <div className='card'>< Song /></div>
-            <div className='card'>< Song /></div>
-            <div className='card'>< Song /></div>
-            <div className='card'>< Song /></div>
+          <div className={styles['hero__trending']}>TRENDING</div>
+          <section className={styles['cards']}>
+            <div className={styles['card']}>< Song /></div>
+            <div className={styles['card']}>< Song /></div>
+            <div className={styles['card']}>< Song /></div>
+            <div className={styles['card']}>< Song /></div>
+            <div className={styles['card']}>< Song /></div>
+            <div className={styles['card']}>< Song /></div>
 
           </section>
         </section>
-        <section className='col-3'>
-          <div className='search'> < Searchbar /> </div>
-          <div className='play-list'>< Customtrack /></div>
+        <section className={styles['col-3']}>
+          <div className={styles['search']}> < Searchbar /> </div>
+          <div className={styles['play-list']}>< Customtrack /></div>
         </section>
 
 

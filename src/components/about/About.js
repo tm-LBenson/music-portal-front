@@ -1,32 +1,29 @@
 import React, { Component } from 'react';
 import Developers from './Developers';
 import MissionStatment from './MissionStatement';
-import styles from '../stylesheets/About.module.css';
-import { Container } from 'react-bootstrap';
 import AboutBlank from './AboutBlank';
 import PlaylistAccordion from './PlaylistAccordion';
+import styles from '../stylesheets/About.module.css';
 
 export default class About extends Component {
   render() {
     return (
       <>
-        <Container classname={styles.aboutCont1}>
-          <div classname={styles.devContainer}>
-            Developers
-            <Developers />
-          </div>
-          <div classname={styles.missionContainer}>
-            <MissionStatment />
-          </div>
-        </Container>
-        <Container classname={styles.aboutCont2}>
-          <div>
-           <AboutBlank />
-          </div>
-          <div>
-          <PlaylistAccordion />
-          </div>
-        </Container>
+        <main className={styles['about-cont-3']}>
+          <section className={styles['about-cont-1']}>
+              <h1 className={styles['dev-cont-title']}>Developers</h1>
+            <div className={styles['dev-container']}>
+              <Developers />
+            </div>
+            <div className={styles['mission-container']}>
+              <MissionStatment />
+            </div>
+          </section>
+          <section className={styles['about-cont-2']}>
+              <AboutBlank />
+              <PlaylistAccordion />
+          </section>
+        </main>
       </>
     )
   }

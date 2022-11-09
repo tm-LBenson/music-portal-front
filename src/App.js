@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './components/stylesheets/reset.css'
 import './components/stylesheets/App.css'
-import './components/stylesheets/home.css'
 import NavDrawer from './components/nav/NavDrawer';
 import NavArea from './components/nav/NavArea'
 import Home from './components/home/Home'
@@ -12,6 +11,7 @@ import Footer from './components/nav/Footer'
 import Auth from './Auth';
 import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
+import './components/stylesheets/music-player.css'
 
 const code = new URLSearchParams(window.location.search).get("code")
 
@@ -33,9 +33,8 @@ export default class App extends Component {
     this.setState({ token: token })
   }
 
-  handleData = (topData) => 
-  {
-    this.setState({topData: topData})
+  handleData = (topData) => {
+    this.setState({ topData: topData })
   }
 
   postUserData = async (obj) => {
@@ -43,11 +42,11 @@ export default class App extends Component {
       let url = `${process.env.REACT_APP_SERVER}/user-results`;
 
       let dataPost = await axios.post(url, obj);
-      
+
       this.setState({
         topData: [...this.state.topData, dataPost.data]
       })
-      
+
     } catch (error) {
       console.log(error.message);
     }
