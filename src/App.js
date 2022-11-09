@@ -60,12 +60,13 @@ export default class App extends Component {
 
     return (
       <React.Fragment>
+         <NavArea />
         <Routes>
           <Route path='/' element={
             !code ? <SplashPage checkLogin={this.checkLogin} /> :
               <React.Fragment >
+                 
                 {!this.state.token ? <Auth onGetToken={this.getToken} code={code} /> : null}
-                <NavArea />
                 {this.state.token ? <NavDrawer token={this.state.token} /> : null}
                 {this.state.token ? <Home /> : null}
 
@@ -81,7 +82,6 @@ export default class App extends Component {
           } />
           <Route path='/music-portal' element={
             <React.Fragment >
-              <NavArea />
               {this.state.token ? <NavDrawer token={this.state.token} /> : null}
 
               {this.state.token ? <MusicPortal data={this.state.topData} pushData={this.handleData} token={this.state.token} /> : null}
@@ -89,9 +89,12 @@ export default class App extends Component {
             </React.Fragment>
           } />
 
-          <Route path='/logout' element={
-            < SplashPage />
-          } />
+   <Route path='/logout' element={
+    <React.Fragment>
+
+          < SplashPage />
+      </React.Fragment>    
+   } />
         </Routes>
         {this.state.token ? <Footer trackUri={this.trackUri} token={this.state.token} /> : null}
       </React.Fragment>
