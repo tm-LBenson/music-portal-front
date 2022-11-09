@@ -8,8 +8,17 @@ const CLIENT_ID = '75b90235ba3f4956834f605c46d9d923'
 const REDIRECT_URI = 'http://localhost:3000/'
 const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize'
 const RESPONSE_TYPE = 'code'
-const SCOPE = 'streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20user-top-read'
-
+const SCOPE = [
+  'streaming',
+  'user-read-email',
+  'user-read-private',
+  'user-library-read',
+  'user-library-modify',
+  'user-read-playback-state',
+  'user-modify-playback-state',
+  'user-top-read',
+  'user-read-currently-playing',
+].join('%20')
 export default class SplashPage extends Component {
 
 

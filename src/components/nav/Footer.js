@@ -17,6 +17,12 @@ export default class Footer extends Component {
 
   }
 
+  componentDidUpdate() {
+    console.log(this.state)
+    if (this.state.playing) {
+      console.log('playing')
+    }
+  }
   render() {
     return (
       <footer className={styles.footer}>
