@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PortalForm from './Portalsearch'
 import UserResults from './UserResults'
+
 import Recs from './Recs'
+
 import styles from '../stylesheets/MusicPortal.module.css'
 import { Container } from 'react-bootstrap'
 import Usertop25 from './Usertop25'
@@ -10,24 +12,27 @@ export default class MusicPortal extends Component {
   constructor(props) {
     super(props)
     this.state = {
+
       data: [],
       songRec: []
+
     }
   }
 
-  handleData = (data) => 
-  {
+  handleData = (data) => {
     let topResults = data.items.map(item => item)
-    this.setState({data: topResults})
+    this.setState({ data: topResults })
   }
 
   handleRec = (data) => 
   {
     
 
+
     let name = data.tracks.map(item => item)
     this.setState({songRec: name})
   }
+
 
 
   render() {
@@ -35,8 +40,7 @@ export default class MusicPortal extends Component {
     return (
       <main className={styles['wrapper']}>
         <section className={styles['col-1']}>
-      <div>Column1</div>
-      <div>
+
 
 <div className={styles['play-list']}> <Usertop25 handleData={this.handleData} token={this.props.token}/></div>
   
@@ -64,6 +68,7 @@ export default class MusicPortal extends Component {
       
       
 </main>
+
     )
   }
 }
