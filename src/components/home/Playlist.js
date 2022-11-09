@@ -10,13 +10,32 @@ export default class Song extends Component {
     super()
     this.state = {}
   }
+
+  getCurrentDevice = async () => {
+    try {
+      const data = await axios({
+        method: 'get', //you can set what request you want to be
+        url: 'https://api.spotify.com/v1/me/player/devices',
+        data: {},
+        headers: {
+          'Authorization': 'Bearer ' + this.props.token,
+          'accept': 'application/json',
+          'Content-type': 'application/json',
+        }
+      })
+      const current = data.data.devices.find(device => device.name === 'Spotify Web Player')
+      this.setState({ deviceData: current.id })
+    } catch (error) {
+      console.error(error.message)
+      this.setState({ deviceData: 'error' })
+    }
+  }
+
   playFromDailyPlaylist = async (uri) => {
     try {
-      console.log(this.props)
-      console.log('getting data')
       const data = await axios({
         method: 'put', //you can set what request you want to be
-        url: 'https://api.spotify.com/v1/me/player/play',
+        url: `https://api.spotify.com/v1/me/player/play?device_id=${this.state.deviceData}`,
         data: {
           "context_uri": uri,
           "offset": {
@@ -25,18 +44,23 @@ export default class Song extends Component {
           "position_ms": 0
         },
         headers: {
-          'Authorization': 'Bearer ' + this.state.token,
+          'Authorization': 'Bearer ' + this.props.token,
           'accept': 'application/json',
           'Content-type': 'application/json',
         }
       })
-      this.setState({ featured: data.data }, () => this.props.passDataUp(this.state.featured))
+      console.log(data)
     } catch (error) {
       console.error(error.message)
     }
   }
   handleClick = (e) => {
-    console.log(e.target.value)
+
+    this.getCurrentDevice()
+    const waitBeforePlaying = () => {
+      this.playFromDailyPlaylist(e.target.value)
+    }
+    setTimeout(waitBeforePlaying, 1500)
 
   }
 

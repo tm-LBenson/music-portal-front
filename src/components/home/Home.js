@@ -19,11 +19,12 @@ export default class Home extends Component {
       lyricsData: []
 
     }
-
-
   }
+
+
+
   retrieveDailySongs = (dailySongs) => {
-    this.setState({ dailySongs: dailySongs }, () => console.log(this.state.dailySongs))
+    this.setState({ dailySongs: dailySongs })
   }
   getlyrics = async () => {
     let result = await axios({
@@ -44,6 +45,7 @@ export default class Home extends Component {
     }
   }
   componentDidMount() {
+
     this.setState({
       lyricsData: []
     });
@@ -57,11 +59,10 @@ export default class Home extends Component {
 
   render() {
 
-
     window.history.pushState({}, null, '/') // clear the browser URL of text 
     return (
       <main className={styles['wrapper']}>
-        <DailyHomeCard passDataUp={this.retrieveDailySongs} token={this.props.token} /> {/* Helper component for API call */}
+        {!this.state.dailySongs ? <DailyHomeCard passDataUp={this.retrieveDailySongs} token={this.props.token} /> : null} {/* Helper component for API call */}
         <section className={styles['col-1']}>
           <div className={styles['video']}></div>
           <div className='text-center' style={{ whiteSpace: 'pre' }}>{this.state.lyricsData[0]}</div>
@@ -73,7 +74,7 @@ export default class Home extends Component {
           <section className={styles['cards']}>
 
             {this.state?.dailySongs ? this.state.dailySongs.playlists.items.map(song => {
-              return <Playlist key={song.id} songData={song} />
+              return <Playlist token={this.props.token} key={song.id} songData={song} />
             }) : null}
 
           </section>

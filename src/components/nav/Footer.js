@@ -17,19 +17,6 @@ export default class Footer extends Component {
 
   }
 
-  componentDidUpdate(prevProps, prevState) {
-
-    if (prevProps.token !== prevState.token) {
-      if (this.state.token) {
-        console.log('placeholder')
-      }
-
-
-    }
-  }
-
-
-
   render() {
     return (
       <footer className={styles.footer}>
