@@ -7,9 +7,9 @@ import Searchbar from './Searchbar'
 import axios from 'axios'
 import DailyHomeCard from './DailyHomeCard'
 
-const artist = 'Grayscale';
+// const artist = 'Grayscale';
 
-const track = 'Over%20Now';
+// const track = 'Over%20Now';
 
 export default class Home extends Component {
   constructor() {
@@ -79,7 +79,7 @@ export default class Home extends Component {
           </section>
         </section>
         <section className={styles['col-3']}>
-          <div className={styles['search']}> < Searchbar /> </div>
+          <div className={styles['search']}> < Searchbar token={this.props.token} /> </div>
           <div className={styles['play-list']}>< Customtrack /></div>
         </section>
 
