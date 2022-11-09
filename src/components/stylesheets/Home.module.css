@@ -69,6 +69,10 @@
   width: 100%;
 }
 
+.card__heading{
+  color: var(--card-heading)
+}
+
 @media (width <= 750px) {
   .wrapper {
     flex-direction: column-reverse;
