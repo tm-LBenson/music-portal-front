@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import HeroTagLine from './HeroTagLine'
 import Customtrack from './Customtrack.js'
 import styles from '../stylesheets/Home.module.css'
-import Song from './Song'
+import Playlist from './Playlist'
 import Searchbar from './Searchbar'
 import axios from 'axios'
-
+import DailyHomeCard from './DailyHomeCard'
 
 const artist = 'Grayscale';
 
@@ -53,12 +53,7 @@ export default class Home extends Component {
     if (!this.state.lyricsData.length) {
       this.getlyrics();
     }
-
-    console.log(this.state);
   }
-
-
-
 
   render() {
 
@@ -66,6 +61,7 @@ export default class Home extends Component {
     window.history.pushState({}, null, '/') // clear the browser URL of text 
     return (
       <main className={styles['wrapper']}>
+        <DailyHomeCard passDataUp={this.retrieveDailySongs} token={this.props.token} /> {/* Helper component for API call */}
         <section className={styles['col-1']}>
           <div className={styles['video']}></div>
           <div className='text-center' style={{ whiteSpace: 'pre' }}>{this.state.lyricsData[0]}</div>
@@ -73,15 +69,13 @@ export default class Home extends Component {
         <section className={styles['col-2']}>
           <HeroTagLine />
           <div className={styles['hero__trending']}>TRENDING</div>
-          <h3>{this.state.dailySongs?.message}</h3>
+          <h2 className={styles['card__heading']}>{this.state.dailySongs?.message}</h2>
           <section className={styles['cards']}>
 
+            {this.state?.dailySongs ? this.state.dailySongs.playlists.items.map(song => {
+              return <Playlist key={song.id} songData={song} />
+            }) : null}
 
-
-            {/* <div className={styles['card']}>
-             
-            </div> */}
-            <Song passDataUp={this.retrieveDailySongs} token={this.props.token} />
           </section>
         </section>
         <section className={styles['col-3']}>
