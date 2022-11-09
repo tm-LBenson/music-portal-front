@@ -19,12 +19,12 @@ export default class Home extends Component {
       lyricsData: []
 
     }
-     retrieveDailySongs = (dailySongs) => {
+
+
+  }
+  retrieveDailySongs = (dailySongs) => {
     this.setState({ dailySongs: dailySongs }, () => console.log(this.state.dailySongs))
   }
-
-  }
-
   getlyrics = async () => {
     let result = await axios({
       method: 'get', //you can set what request you want to be
@@ -40,23 +40,23 @@ export default class Home extends Component {
       }, this.callAPI)
     } catch (error) {
       console.error(error.message);
-    
+
     }
   }
-    componentDidMount(){
-      this.setState({
-        lyricsData: []
-      });
+  componentDidMount() {
+    this.setState({
+      lyricsData: []
+    });
+  }
+
+  componentDidUpdate() {
+    if (!this.state.lyricsData.length) {
+      this.getlyrics();
     }
 
-    componentDidUpdate(){
-      if (!this.state.lyricsData.length) {
-        this.getlyrics();
-      }
+    console.log(this.state);
+  }
 
-      console.log(this.state);
-    }
-  
 
 
 
