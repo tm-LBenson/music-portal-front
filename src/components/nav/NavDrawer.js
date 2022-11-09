@@ -22,7 +22,7 @@ export default class NavDrawer extends Component {
       headers: {
         'Authorization': 'Bearer ' + this.state.token,
         'accept': 'application/json',
-        'Content-type': 'application/json',
+        'Content-type': 'application/json'
       }
     })
       .then(data => this.setState({

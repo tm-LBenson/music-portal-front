@@ -33,6 +33,7 @@ export default class MusicPortal extends Component {
     return (
       <main className={styles['wrapper']}>
         <section className={styles['col-1']}>
+
           <div>Column1</div>
           <div>
 
@@ -62,6 +63,7 @@ export default class MusicPortal extends Component {
           <Container className={styles['placeholder']}>Place Holder</Container>
           <Container className={styles['placeholder']}>Place Holder</Container>
         </section>
+
 
 
       </main>
