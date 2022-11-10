@@ -45,7 +45,7 @@ export default class Searchbar extends Component {
       this.setState({ trackData: data.data })
     }
     catch (error) {
-      console(error.message)
+      console.log(error.message)
     }
   }
 
@@ -113,7 +113,7 @@ export default class Searchbar extends Component {
     }
   }
   render() {
-    console.log(this.state.trackData);
+
     return (
       <>
 
