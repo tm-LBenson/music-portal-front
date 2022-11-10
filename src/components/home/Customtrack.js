@@ -32,12 +32,40 @@ export default class Customtrack extends Component {
     }
   }
 
+  getSongArtist = async (uri) => {
+    const id = uri.split(':')[2]
+    try {
+      const data = await axios({
+        method: 'get', //you can set what request you want to be
+        url: `https://api.spotify.com/v1/tracks/${id}`,
+        data: {
+          "context_uri": uri,
+
+          "position_ms": 0
+        },
+        headers: {
+          'Authorization': 'Bearer ' + this.props.token,
+          'accept': 'application/json',
+          'Content-type': 'application/json',
+        }
+      })
+      this.playFromPlaylist(data.data.album.uri)
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
+
+
   playFromPlaylist = async (uri) => {
     try {
       const data = await axios({
-        method: 'post', //you can set what request you want to be
-        url: `https://api.spotify.com/v1/me/player/queue?device_id=${this.state.deviceData}&uri=${uri.split(':').join('%3')}`,
-        data: {},
+        method: 'put', //you can set what request you want to be
+        url: `https://api.spotify.com/v1/me/player/play`,
+        data: {
+          "context_uri": uri,
+
+          "position_ms": 0
+        },
         headers: {
           'Authorization': 'Bearer ' + this.props.token,
           'accept': 'application/json',
@@ -75,7 +103,8 @@ export default class Customtrack extends Component {
     console.log(e.target.value)
     this.getCurrentDevice()
     const waitBeforePlaying = () => {
-      this.playFromPlaylist(e.target.value)
+      console.log('waiting')
+      this.getSongArtist(e.target.value)
     }
     setTimeout(waitBeforePlaying, 1500)
 
@@ -114,7 +143,7 @@ export default class Customtrack extends Component {
                         <button value={song._id} onClick={this.openModal}></button>
                         {song.artist}
                       </td>
-                      <td>
+                      <td className={styles.button__parent}>
                         <button className={styles['card__text-content--button']} onClick={this.handleClick} value={song.uri}></button>
                         <FontAwesomeIcon icon={faPlay} />
                       </td>
