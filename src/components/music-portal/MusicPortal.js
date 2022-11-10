@@ -5,7 +5,6 @@ import UserResults from './UserResults'
 import Recs from './Recs'
 
 import styles from '../stylesheets/MusicPortal.module.css'
-import { Container } from 'react-bootstrap'
 import Usertop25 from './Usertop25'
 
 export default class MusicPortal extends Component {
@@ -41,7 +40,7 @@ export default class MusicPortal extends Component {
         <section className={styles['col-1']}>
 
 
-          <div className={styles['play-list']}> <Usertop25 handleData={this.handleData} token={this.props.token} /></div>
+  <Usertop25 handleData={this.handleData} token={this.props.token} />
 
 
           <UserResults topUserData={this.state.data} />
