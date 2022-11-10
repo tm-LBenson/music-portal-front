@@ -17,7 +17,7 @@ export default class Home extends Component {
   }
 
 
-  passFunction = (func) => this.setState({ getSong: func })
+
 
   getShowStatus = (showOrNot, _id) => {
     this.setState(this.setState({ show: showOrNot, _id: _id }))
@@ -85,7 +85,7 @@ export default class Home extends Component {
     window.history.pushState({}, null, '/') // clear the browser URL of text 
     return (
       <main className={styles['wrapper']}>
-        {this.state.show ? <CustomModal getPlaylist={this.state.getSong} closeModal={this.closeModal} _id={this.state._id} show={this.state.show} /> : null}
+        {this.state.show ? <CustomModal getPlaylist={this.props.getSong} closeModal={this.closeModal} _id={this.state._id} show={this.state.show} /> : null}
         {!this.state.dailySongs ? <DailyHomeCard passDataUp={this.retrieveDailySongs} token={this.props.token} /> : null} {/* Helper component for API call */}
         <section className={styles['col-1']}>
           <button onClick={() => this.getLyrics()} className={styles.lyrics__button}>Check for lyrics!</button>
@@ -103,7 +103,7 @@ export default class Home extends Component {
           </section>
         </section>
         <section className={styles['col-3']}>
-          <div className={styles['search']}> < Searchbar token={this.props.token} getSong={this.state.getSong} user_id={this.props.user_id} /> </div>
+          <div className={styles['search']}> < Searchbar token={this.props.token} getSong={this.props.getSong} user_id={this.props.user_id} /> </div>
           <div className={styles['play-list']}>{this.props.user_id ?
             < Customtrack
               currentlyPlaying={this.getCurrentlyPlaying}

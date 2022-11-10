@@ -111,7 +111,8 @@ export default class Customtrack extends Component {
   }
   componentDidMount() {
     setTimeout(this.getPlaylist, 2000)
-    this.props.passFunction(this.getPlaylist)
+    if (this.props.passFunction) this.props?.passFunction(this?.getPlaylist)
+
   }
 
   render() {
