@@ -9,7 +9,7 @@ export default class DeveloperZoe extends Component {
         <Card.Img variant="top" src="holder.js/100px180" />
         <Card.Body>
           <Card.Title>Zoe</Card.Title>
-          <Button variant="primary">About</Button>
+          <Button variant="success">About</Button>
         </Card.Body>
       </Card>
     )
