@@ -11,7 +11,7 @@ export default class TrackResults extends Component {
   }
   addToPlaylist = (e) => {
     const addToPlaylist = async () => {
-      const [title, uri, artist] = e.target.value.split(',')
+      const [title, artist, uri] = e.target.value.split(',')
       try {
 
         const data = await axios({
@@ -22,6 +22,7 @@ export default class TrackResults extends Component {
             title: title,
             uri: uri,
             artist: artist,
+            user_note: ''
           },
           headers: {}
         })
