@@ -20,7 +20,7 @@ export default class About extends Component {
             </div>
           </section>
           <section className={styles['about-cont-2']}>
-              <AboutBlank />
+              {/* <AboutBlank /> */}
               <PlaylistAccordion />
           </section>
         </main>
