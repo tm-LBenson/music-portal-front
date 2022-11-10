@@ -10,13 +10,16 @@ export default class RecSingle extends Component {
       <Card className={styles['card']}>
         <Card.Img className={styles['cardimg']} src={this.props.img} />
         <Card.Body>
-          <Card.Title>
+          <Card.Title className={styles['text']}>
             {this.props.SongName}
           </Card.Title>
-          <Card.Text> 
-            {this.props.ArtistName}
-            <div></div>
-            {this.props.AlbumName}
+          <Card.Text > 
+          <div className={styles['textSmall']}>
+            Artist: {this.props.ArtistName}
+            </div>
+            <div className={styles['textSmall']}>
+            Album: {this.props.AlbumName}
+            </div>
           </Card.Text>
         </Card.Body>
       </Card>

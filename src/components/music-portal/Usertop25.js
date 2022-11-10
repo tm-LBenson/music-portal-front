@@ -65,16 +65,16 @@ export default class Usertop25 extends Component {
 
     return (
       <React.Fragment>
-        <p>Your Favorites!</p>
-        <Form onSubmit={this.getData}>
+        <Form onSubmit={this.getData} className={styles['left']}>
+        <h1 className={styles['head']}>Find your top tracks and artists!</h1>
           <section className={styles['drop']}>
             <Form.Group className="mb-3" controlId="Type">
               <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Dropdown.Toggle className={styles['text']} variant="success" id="dropdown-basic">
                   Type
                 </Dropdown.Toggle>
 
-                <Dropdown.Menu>
+                <Dropdown.Menu className={styles['text']}>
                   <Dropdown.Item onClick={() => this.setState({ type: 'artists' })} href="#sel-1">Artists</Dropdown.Item>
                   <Dropdown.Item onClick={() => this.setState({ type: 'tracks' })} href="#sel-2">Tracks</Dropdown.Item>
                 </Dropdown.Menu>
@@ -84,23 +84,23 @@ export default class Usertop25 extends Component {
 
             <Form.Group className="mb-3" controlId="TimeRange">
 
-              <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+              <Dropdown >
+                < Dropdown.Toggle className={styles['text']} variant="success" id="dropdown-basic">
                   Time Range
                 </Dropdown.Toggle>
 
-                <Dropdown.Menu>
+                <Dropdown.Menu className={styles['text']} >
                   <Dropdown.Item onClick={() => this.setState({ timeRange: 'short_term' })} href="#sel-1">Past Month</Dropdown.Item>
                   <Dropdown.Item onClick={() => this.setState({ timeRange: 'medium_term' })} href="#sel-2">Past 6 Months</Dropdown.Item>
                   <Dropdown.Item onClick={() => this.setState({ timeRange: 'long_term' })} href="#sel-3">Past 3 Years</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </Form.Group>
-          </section>
 
-          <Button className={styles.button} variant="primary" type="submit">
-            Submit
+          <Button className={styles['text']} variant="primary" type="submit">
+            Get Results!
           </Button>
+          </section>
           <Form.Group className="mb-3" ></Form.Group>
         </Form>
       </React.Fragment >
