@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion';
 import ArtistResults from './ArtistResults';
-import TrackResults from './TrackResults ';
+import TrackResults from './TrackResults';
 import styles from '../stylesheets/TrackResults.module.css';
 import axios from 'axios';
 

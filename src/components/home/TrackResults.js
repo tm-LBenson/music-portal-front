@@ -5,9 +5,13 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 export default class TrackResults extends Component {
-
+  constructor() {
+    super()
+    this.state = {}
+  }
   addToPlaylist = (e) => {
     const addToPlaylist = async () => {
+      const [title, uri, artist] = e.target.value.split(',')
       try {
 
         const data = await axios({
@@ -15,17 +19,17 @@ export default class TrackResults extends Component {
           url: 'http://localhost:3001/add-song',
           data: {
             user_id: this.props.user_id,
-            title: e.target.value[0],
-            uri: e.target.value[2],
-            artist: e.target.value[1],
+            title: title,
+            uri: uri,
+            artist: artist,
           },
           headers: {}
         })
-        this.setState({ featured: data.data }, () => this.props.passDataUp(this.state.featured))
+        this.setState({ trackResults: data.data }, () => console.log(this.state.TrackResults))
       } catch (error) {
         console.error(error.message)
       }
-    } 
+    }
     addToPlaylist();
   }
 
@@ -44,7 +48,7 @@ export default class TrackResults extends Component {
           <td>
             <div className={styles['button-wrapper']}>
               <div className={styles['button-parent']}>
-                <button value={[item.name, item?.artists[0]?.name, item]} onClick={this.addToPlaylist}></button>
+                <button value={[item.name, item?.artists[0]?.name, item.uri]} onClick={this.addToPlaylist}></button>
                 <FontAwesomeIcon icon={faPlus} />
               </div>
             </div>
