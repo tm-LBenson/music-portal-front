@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion';
 import ArtistResults from './ArtistResults';
 import TrackResults from './TrackResults ';
+import styles from '../stylesheets/TrackResults.module.css';
 import axios from 'axios';
 
 
@@ -125,17 +126,27 @@ export default class Searchbar extends Component {
             <Form.Text className="text-muted">
               Powered by Spotify ©
             </Form.Text>
-          </Form.Group>
+            <Form.Group className="mb-3" ></Form.Group>
           <Button variant="primary" type="submit">
             Submit
           </Button>
+          </Form.Group>
         </Form>
 
         <Accordion>
           <Accordion.Item eventKey="0">
-            <Accordion.Header>Top 10 Tracks from Artist</Accordion.Header>
+            <Accordion.Header>Top 3 Song Results</Accordion.Header>
             <Accordion.Body>
-              <TrackResults topTracks={this.state.trackData} />
+            <table className={styles['table-trackdata']}>
+            <thead className={styles['thead-trackdata']}>
+              <tr>
+                <th>Title</th>
+                <th>Album</th>
+                <th>Add to Playlist</th>
+              </tr>
+            </thead>
+              <TrackResults topTracks={this.state.trackData} user_id={this.props.user_id}/>
+            </table>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
@@ -148,12 +159,12 @@ export default class Searchbar extends Component {
               Powered by Spotify ©
             </Form.Text>
           </Form.Group>
-
           <Button variant="primary" type="submit">
             Submit
           </Button>
           <Form.Group className="mb-3" ></Form.Group>
         </Form>
+
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Top 10 Tracks from Artist</Accordion.Header>
