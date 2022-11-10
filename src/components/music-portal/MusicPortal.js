@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PortalForm from './Portalsearch'
+import Customtrack from '../home/Customtrack.js'
 import UserResults from './UserResults'
 
 import Recs from './Recs'
@@ -35,15 +36,15 @@ export default class MusicPortal extends Component {
 
   render() {
     // console.log(this.state.data)
+    console.log(this.props.user_id)
     return (
       <section className={styles['wrapper']}>
         <section className={styles['col-1']}>
 
-
   <Usertop25 handleData={this.handleData} token={this.props.token} />
 
 
-          <UserResults topUserData={this.state.data} />
+          <UserResults topUserData={this.state.data} user_id={this.props.user_id}/>
         </section>
         <section className={styles['col-2']}>
 
@@ -59,6 +60,7 @@ export default class MusicPortal extends Component {
           </section>
         </section>
         <section className={styles['col-3']}>
+        <div className={styles['play-list']}>{this.props.user_id ? < Customtrack showOrNot={this.getShowStatus} passFunction={this.passFunction} user_id={this.props.user_id} /> : null}</div>
         </section>
 
 

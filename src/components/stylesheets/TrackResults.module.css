@@ -15,6 +15,13 @@ width: 30%;
 font-size: 1.2rem;
 }
 
+.name {
+  margin-top: .9vw;
+  font-size: 0.85vw;
+  margin-left: 0.1vw;
+  font-weight: 900;
+}
+
 .tbody-trackdata {
 width: 100%;
 padding: 2px;
