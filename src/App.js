@@ -40,7 +40,7 @@ export default class App extends Component {
     this.setState({ user_id: userid })
   }
   grabPlayingStatus = (isItPlaying) => {
-    this.setState({ currentlyPlaying: isItPlaying }, () => console.log(this.state.currentlyPlaying))
+    this.setState({ currentlyPlaying: isItPlaying })
   }
 
 
@@ -68,7 +68,7 @@ export default class App extends Component {
       <React.Fragment>
         <NavArea />
 
-          {this.state.token ? <NavDrawer token={this.state.token}  getUserId={this.getUserID}/> : null}
+        {this.state.token ? <NavDrawer token={this.state.token} getUserId={this.getUserID} /> : null}
 
         <Routes>
           <Route path='/' element={
@@ -76,7 +76,7 @@ export default class App extends Component {
               <React.Fragment >
 
                 {!this.state.token ? <Auth onGetToken={this.getToken} code={code} /> : null}
-                {this.state.token ? <Home playingStatus={this.state.currentlyPlaying} token={this.state.token} user_id={this.state.user_id}/> : null}
+                {this.state.token ? <Home playingStatus={this.state.currentlyPlaying} token={this.state.token} user_id={this.state.user_id} /> : null}
               </React.Fragment>
           } />
 

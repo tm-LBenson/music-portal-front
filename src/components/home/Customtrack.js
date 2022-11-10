@@ -3,7 +3,7 @@ import axios from 'axios';
 import styles from '../stylesheets/Customtrack.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
-
+import { Accordion } from 'react-bootstrap';
 
 export default class Customtrack extends Component {
   constructor() {
@@ -12,7 +12,7 @@ export default class Customtrack extends Component {
 
   }
 
-  
+
   getPlaylist = async () => {
     try {
       const url = `http://localhost:3001/play-list/${this.props.user_id}`
@@ -22,31 +22,15 @@ export default class Customtrack extends Component {
         data: {},
         headers: {}
       })
-      this.setState({ playlist: data.data }, () => console.log(this.state.playlist))
+      this.setState({ playlist: data.data })
     } catch (error) {
       console.error(error.message)
     }
   }
 
-  removeFromPlaylist = (e) => {
-    e.preventDefault();
+  openModal = (e) => {
     console.log(e.target.value)
-    const deleteSong = async () => {
-      
-      try { 
-        const url = `http://localhost:3001/delete/${e.target.value}`
-        const data = await axios({
-          method: 'delete', //you can set what request you want to be
-          url: url,
-          data: {},
-          headers: {}
-        })
-        this.getPlaylist()
-      } catch (error) {
-        console.error(error.message)
-      }
-    }
-    deleteSong()
+    this.props.showOrNot(true, e.target.value)
 
   }
 
@@ -56,40 +40,49 @@ export default class Customtrack extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
-      <table className={styles['table-trackdata']}>
-        <thead className={styles['thead-trackdata']}>
-          <tr>
-            <th>Title</th>
-            <th>Artist</th>
-            <th>Play</th>
-            <th>Remove from Playlist</th>
-          </tr>
-        </thead>
-        {this.state?.playlist?.map(song => {
-          return (
-            <>
-              <tr>
-                <td>
-                  {song.title}
-                </td>
-                <td>
-                  {song.artist}
-                </td>
-                <td>
-                  <div className={styles['button-wrapper']}>
-                    <div className={styles['button-parent']}>
-                      <button value={song._id} onClick={this.removeFromPlaylist}></button>
-                      <FontAwesomeIcon icon={faMinus} />
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </>
-          )
-        })}
-      </table>
+
+      <Accordion defaultActiveKey={['0']} alwaysOpen>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>Custom Play list</Accordion.Header>
+          <Accordion.Body>
+            <table className={styles['table-trackdata']}>
+              <thead className={styles['thead-trackdata']}>
+                <tr className={styles['thead-trackdata__tr']}>
+                  <th>Title</th>
+                  <th>Artist</th>
+
+                </tr>
+              </thead>
+              {this.state?.playlist?.map(song => {
+                return (
+                  <>
+
+                    <tr>
+                      <td className={styles['button-parent']}>
+                        <button value={song._id} onClick={this.openModal}></button>
+                        {song.title}
+                      </td>
+                      <td className={styles['button-parent']}>
+                        <button value={song._id} onClick={this.openModal}></button>
+                        {song.artist}
+                      </td>
+                      <td>
+
+
+
+
+                      </td>
+                    </tr>
+                  </>
+                )
+              })}
+            </table>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+
+
     )
   }
 }
