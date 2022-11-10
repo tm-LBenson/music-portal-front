@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Dropdown } from 'react-bootstrap';
 import axios from 'axios'
+import styles from '../stylesheets/MusicPortal.module.css'
 
 export default class Portalsearch extends Component {
   constructor() {
@@ -141,6 +142,9 @@ export default class Portalsearch extends Component {
           <Form.Text className="text-muted">
             Powered by Spotify ©
           </Form.Text>
+        </Form.Group>
+
+          <section className={styles['drop']}>
 
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -185,11 +189,11 @@ export default class Portalsearch extends Component {
               <Dropdown.Item onClick={() => this.setState({ energy: 0.2 })} href="#sel-2">Less</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+          </section>
 
-        </Form.Group>
 
 
-        <Button variant="primary" type="submit">
+        <Button className={styles.button}variant="primary" type="submit">
           Submit
         </Button>
         <Form.Group className="mb-3" ></Form.Group>

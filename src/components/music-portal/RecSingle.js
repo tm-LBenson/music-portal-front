@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card';
+import styles from '../stylesheets/MusicPortal.module.css'
 
 export default class RecSingle extends Component {
   render() {
     return (
+      <>
+
       <Card >
         <Card.Img src={this.props.img} />
         <Card.Body>
@@ -17,6 +20,9 @@ export default class RecSingle extends Component {
           </Card.Text>
         </Card.Body>
       </Card>
+
+
+      </>
     )
   }
 }
