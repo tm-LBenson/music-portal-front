@@ -78,12 +78,7 @@ export default class Home extends Component {
     });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.props.playingStatus) {
-      setTimeout(this.getLyrics, 1500);
-    }
 
-  }
 
   render() {
 
@@ -93,7 +88,7 @@ export default class Home extends Component {
         {this.state.show ? <CustomModal getPlaylist={this.state.getSong} closeModal={this.closeModal} _id={this.state._id} show={this.state.show} /> : null}
         {!this.state.dailySongs ? <DailyHomeCard passDataUp={this.retrieveDailySongs} token={this.props.token} /> : null} {/* Helper component for API call */}
         <section className={styles['col-1']}>
-          <button className={styles.lyrics__button}>Check for lyrics!</button>
+          <button onClick={() => this.getLyrics()} className={styles.lyrics__button}>Check for lyrics!</button>
 
           <div className={`text-center ${styles.lyric__wrapper}`} style={{ whiteSpace: 'pre' }}>{this.state.lyricsData[0]}</div>
         </section>
@@ -109,7 +104,14 @@ export default class Home extends Component {
         </section>
         <section className={styles['col-3']}>
           <div className={styles['search']}> < Searchbar token={this.props.token} getSong={this.state.getSong} user_id={this.props.user_id} /> </div>
-          <div className={styles['play-list']}>{this.props.user_id ? < Customtrack showOrNot={this.getShowStatus} passFunction={this.passFunction} user_id={this.props.user_id} /> : null}</div>
+          <div className={styles['play-list']}>{this.props.user_id ?
+            < Customtrack
+              currentlyPlaying={this.getCurrentlyPlaying}
+              showOrNot={this.getShowStatus}
+              passFunction={this.passFunction}
+              token={this.props.token}
+              user_id={this.props.user_id} />
+            : null}</div>
         </section>
       </main>
     )
