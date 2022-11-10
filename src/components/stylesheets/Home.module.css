@@ -51,9 +51,11 @@
 }
 
 .hero__trending {
-  height: 5rem;
-
-  width: 90%;
+  margin-top: 2%;
+  height: 4rem;
+  font-size: 2.1rem;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .cards {
