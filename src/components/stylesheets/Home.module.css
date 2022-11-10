@@ -73,6 +73,61 @@
   color: var(--card-heading);
 }
 
+.modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__wrapper button {
+  margin: 5px;
+  width: 30%;
+  padding: 5px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 3px 3px 3px #333;
+  transition: all 0.2s;
+}
+.modal__wrapper button:hover {
+  box-shadow: 3px 3px 4px rgba(51, 51, 51, 0.651);
+  transform: translateY(-3px);
+}
+.modal__wrapper button:active {
+  box-shadow: 3px 3px 7px rgba(51, 51, 51, 0.434);
+  transform: translateY(-2px);
+}
+.edit {
+  background-color: var(--success);
+  font-size: 1.3rem;
+}
+.delete {
+  background-color: var(--warning);
+  font-size: 1.2rem;
+}
+textarea {
+  height: 120px;
+  width: 150%;
+}
+
+.submit {
+  width: 100%;
+  background-color: var(--success);
+  position: absolute;
+  bottom: -3.5rem;
+  left: 0;
+}
+.cancel {
+  background-color: var(--warning);
+  position: absolute;
+  bottom: 0;
+  bottom: -3.5rem;
+  right: 0;
+}
+.form-group {
+  position: relative;
+  margin-bottom: 4.8rem;
+}
+
 @media (width <= 750px) {
   .wrapper {
     flex-direction: column-reverse;
