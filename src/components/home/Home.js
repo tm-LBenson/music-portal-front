@@ -97,7 +97,7 @@ export default class Home extends Component {
         </section>
         <section className={styles['col-3']}>
           <div className={styles['search']}> < Searchbar token={this.props.token} user_id={this.props.user_id} /> </div>
-          <div className={styles['play-list']}>< Customtrack /></div>
+          <div className={styles['play-list']}>{this.props.user_id ? < Customtrack user_id={this.props.user_id}/> : null }</div>
         </section>
 
 

@@ -12,7 +12,7 @@ export default class TrackResults extends Component {
 
         const data = await axios({
           method: 'post', //you can set what request you want to be
-          url: 'http://localhost3001/add-song',
+          url: 'http://localhost:3001/add-song',
           data: {
             user_id: this.props.user_id,
             title: e.target.value[0],
@@ -31,7 +31,6 @@ export default class TrackResults extends Component {
 
 
   render() {
-    console.log(this.props.user_id);
     let topSongTracks = this.props?.topTracks?.tracks?.items?.map(item => {
       return (
         <tr className={styles['tr-trackdata']} key={item.id}>

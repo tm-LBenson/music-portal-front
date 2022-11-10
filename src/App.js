@@ -76,7 +76,7 @@ export default class App extends Component {
               <React.Fragment >
 
                 {!this.state.token ? <Auth onGetToken={this.getToken} code={code} /> : null}
-                {this.state.token ? <Home playingStatus={this.state.currentlyPlaying} token={this.state.token} /> : null}
+                {this.state.token ? <Home playingStatus={this.state.currentlyPlaying} token={this.state.token} user_id={this.state.user_id}/> : null}
               </React.Fragment>
           } />
 
