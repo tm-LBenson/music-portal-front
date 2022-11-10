@@ -14,7 +14,6 @@ import DailyHomeCard from './DailyHomeCard'
 export default class Home extends Component {
   constructor() {
     super()
-
     this.state = {
       lyricsData: []
 
@@ -80,8 +79,8 @@ export default class Home extends Component {
           </section>
         </section>
         <section className={styles['col-3']}>
-          <div className={styles['search']}> < Searchbar token={this.props.token} /> </div>
-          {/* <div className={styles['play-list']}>< Customtrack /></div> */}
+          <div className={styles['search']}> < Searchbar token={this.props.token} user_id={this.props.user_id}/> </div>
+          <div className={styles['play-list']}>< Customtrack /></div>
         </section>
 
 
