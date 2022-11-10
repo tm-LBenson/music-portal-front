@@ -42,7 +42,7 @@ export default class Customtrack extends Component {
   render() {
     return (
 
-      <Accordion defaultActiveKey={['0']} alwaysOpen>
+      <Accordion defaultActiveKey={['0']} alwaysOpen className={styles['playlist-comp']}>
         <Accordion.Item eventKey="0">
           <Accordion.Header>Custom Play list</Accordion.Header>
           <Accordion.Body>
@@ -57,7 +57,6 @@ export default class Customtrack extends Component {
               {this.state?.playlist?.map(song => {
                 return (
                   <>
-
                     <tr>
                       <td className={styles['button-parent']}>
                         <button value={song._id} onClick={this.openModal}></button>
@@ -68,10 +67,6 @@ export default class Customtrack extends Component {
                         {song.artist}
                       </td>
                       <td>
-
-
-
-
                       </td>
                     </tr>
                   </>
@@ -81,8 +76,6 @@ export default class Customtrack extends Component {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-
-
     )
   }
 }

@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
   margin-top: 2%;
 }
 
@@ -17,6 +17,7 @@ font-size: 1.2rem;
 
 .tbody-trackdata {
 width: 100%;
+padding: 2px;
 }
 
 .thead-trackdata > tr{
@@ -47,4 +48,9 @@ width: 100%;
   display: flex;
   justify-content: flex-end;
   width: 100%;
+}
+
+.artist-results {
+  font-size: 1.2rem;
+  margin: 8px;
 }
