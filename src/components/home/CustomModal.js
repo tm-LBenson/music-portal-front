@@ -104,7 +104,7 @@ export default class CustomModal extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Notes will be displayed here</p>
+            <p>{this.state?.song?.user_note}</p>
             {this.state.addNote ? <div className={styles['form-group']}> <form onSubmit={this.submitNotes} className={styles['form']}>
               <label>
                 Add a note
