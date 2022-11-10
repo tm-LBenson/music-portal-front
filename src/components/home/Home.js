@@ -7,10 +7,6 @@ import Searchbar from './Searchbar'
 import axios from 'axios'
 import DailyHomeCard from './DailyHomeCard'
 
-// const artist = 'Grayscale';
-
-// const track = 'Over%20Now';
-
 export default class Home extends Component {
   constructor() {
     super()
@@ -20,15 +16,35 @@ export default class Home extends Component {
     }
   }
 
-
-
   retrieveDailySongs = (dailySongs) => {
     this.setState({ dailySongs: dailySongs })
   }
-  getlyrics = async () => {
-    let result = await axios({
+
+  getCurrentlyPlaying = async () => {
+    try {
+      const data = await axios({
+        method: 'get', //you can set what request you want to be
+        url: 'https://api.spotify.com/v1/me/player/currently-playing',
+        data: {},
+        headers: {
+          'Authorization': 'Bearer ' + this.props.token,
+          'accept': 'application/json',
+          'Content-type': 'application/json',
+        }
+      })
+      this.setState({ artist: data.data.item.artists[0].name, track: data.data.item.name })
+    } catch (error) {
+      console.error(error.message)
+      this.setState({ deviceData: 'error' })
+    }
+  }
+
+
+  getLyrics = async () => {
+    const url = `http://localhost:3001/lyrics?artist=${this.state.artist}&track=${this.state.track}`
+    const result = await axios({
       method: 'get', //you can set what request you want to be
-      url: `http://localhost:3001/lyrics?artist=Grayscale&track=Over%20Now`,
+      url: url,
       // data: {},
       // headers: {
       //   'Access-Control-Allow-Origin': '*'
@@ -50,10 +66,11 @@ export default class Home extends Component {
     });
   }
 
-  componentDidUpdate() {
-    if (!this.state.lyricsData.length) {
-      this.getlyrics();
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.playingStatus) {
+      setTimeout(this.getLyrics, 1500);
     }
+
   }
 
   render() {
@@ -73,13 +90,13 @@ export default class Home extends Component {
           <section className={styles['cards']}>
 
             {this.state?.dailySongs ? this.state.dailySongs.playlists.items.map(song => {
-              return <Playlist token={this.props.token} key={song.id} songData={song} />
+              return <Playlist currentlyPlaying={this.getCurrentlyPlaying} token={this.props.token} key={song.id} songData={song} />
             }) : null}
 
           </section>
         </section>
         <section className={styles['col-3']}>
-          <div className={styles['search']}> < Searchbar token={this.props.token} user_id={this.props.user_id}/> </div>
+          <div className={styles['search']}> < Searchbar token={this.props.token} user_id={this.props.user_id} /> </div>
           <div className={styles['play-list']}>< Customtrack /></div>
         </section>
 

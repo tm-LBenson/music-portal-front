@@ -49,7 +49,7 @@ export default class Song extends Component {
           'Content-type': 'application/json',
         }
       })
-      console.log(data)
+      setTimeout(this.props.currentlyPlaying, 1500)
     } catch (error) {
       console.error(error.message)
     }
