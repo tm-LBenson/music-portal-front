@@ -65,7 +65,7 @@
 }
 
 .play-list {
-  height: 60%;
+  height: 100%;
   width: 100%;
 }
 
@@ -84,8 +84,7 @@
   }
 
   .play-list {
-    height: 10rem;
-    overflow: hidden;
+    margin-top: 100%;
   }
 
   .cards {
