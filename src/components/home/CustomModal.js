@@ -110,25 +110,27 @@ export default class CustomModal extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>{this.state?.song?.user_notes}</p>
-            {this.state.addNote ? <div className={styles['form-group']}> <form onSubmit={this.submitNotes} className={styles['form']}>
-              <label>
-                Add a note
-                <textarea></textarea>
-              </label>
-              <button type='submit'>Submit</button>
-            </form><button onClick={() => {
-              this.setState({ addNote: false })
-            }}>Cancel</button></div> : null}
-            <button onClick={this.handleNotes}>Edit Note</button>
-            <button onClick={() => {
-              this.removeSongHander()
-              this.props.getPlaylist()
-              this.props.closeModal(false)
-              this.setState({ show: false })
+            <div className={styles.modal__wrapper}>
+              <p>{this.state?.song?.user_notes}</p>
+              {this.state.addNote ? <div className={styles['form-group']}> <form onSubmit={this.submitNotes} className={styles['form']}>
+                <label>
+                  Add a note
+                  <textarea></textarea>
+                </label>
+                <button className={styles.submit} type='submit'>Submit</button>
+              </form><button className={styles.cancel} onClick={() => {
+                this.setState({ addNote: false })
+              }}>Cancel</button></div> : null}
+              <button className={styles['edit']} onClick={this.handleNotes}>Edit Note</button>
+              <button className={styles['delete']} onClick={() => {
+                this.removeSongHander()
+                this.props.getPlaylist()
+                this.props.closeModal(false)
+                this.setState({ show: false })
 
-            }
-            }>Delete</button>
+              }
+              }>Delete</button>
+            </div>
           </Modal.Body>
         </Modal>
       </>

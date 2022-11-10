@@ -93,8 +93,9 @@ export default class Home extends Component {
         {this.state.show ? <CustomModal getPlaylist={this.state.getSong} closeModal={this.closeModal} _id={this.state._id} show={this.state.show} /> : null}
         {!this.state.dailySongs ? <DailyHomeCard passDataUp={this.retrieveDailySongs} token={this.props.token} /> : null} {/* Helper component for API call */}
         <section className={styles['col-1']}>
-          <div className={styles['video']}></div>
-          <div className='text-center' style={{ whiteSpace: 'pre' }}>{this.state.lyricsData[0]}</div>
+          <button className={styles.lyrics__button}>Check for lyrics!</button>
+
+          <div className={`text-center ${styles.lyric__wrapper}`} style={{ whiteSpace: 'pre' }}>{this.state.lyricsData[0]}</div>
         </section>
         <section className={styles['col-2']}>
           <HeroTagLine />

@@ -52,10 +52,12 @@ export default class Customtrack extends Component {
 
                 </tr>
               </thead>
-              {this.state?.playlist?.map(song => {
-                return (
-                  <>
-                    <tr>
+              <tbody>
+                {this.state?.playlist?.map(song => {
+                  return (
+
+
+                    <tr key={song._id}>
                       <td className={styles['button-parent']}>
                         <button value={song._id} onClick={this.openModal}></button>
                         {song.title}
@@ -67,9 +69,10 @@ export default class Customtrack extends Component {
                       <td>
                       </td>
                     </tr>
-                  </>
-                )
-              })}
+
+                  )
+                })}
+              </tbody>
             </table>
           </Accordion.Body>
         </Accordion.Item>
