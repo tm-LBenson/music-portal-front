@@ -37,7 +37,7 @@ export default class MusicPortal extends Component {
   render() {
     // console.log(this.state.data)
     return (
-      <main className={styles['wrapper']}>
+      <section className={styles['wrapper']}>
         <section className={styles['col-1']}>
 
 
@@ -47,11 +47,10 @@ export default class MusicPortal extends Component {
           <UserResults topUserData={this.state.data} />
         </section>
         <section className={styles['col-2']}>
+
           <div className={styles['col-2-1']}>
             < PortalForm token={this.props.token}
               handleRec={this.handleRec} pushData={this.props.pushData} />
-
-
           </div>
           <section className={styles['cards']}>
             <div className={styles['card']}>
@@ -61,13 +60,10 @@ export default class MusicPortal extends Component {
           </section>
         </section>
         <section className={styles['col-3']}>
-          <Container className={styles['placeholder']}>Place Holder</Container>
-          <Container className={styles['placeholder']}>Place Holder</Container>
-          <Container className={styles['placeholder']}>Place Holder</Container>
         </section>
 
 
-      </main>
+      </section>
 
     )
   }
