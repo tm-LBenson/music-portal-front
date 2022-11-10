@@ -63,7 +63,7 @@ export default class App extends Component {
   trackUri = 'spotify:artist:3HkwxR8PuBf5hvumgsfByJ'
 
   render() {
-
+console.log(this.state.user_id)
     return (
       <React.Fragment>
         <NavArea />
@@ -87,7 +87,7 @@ export default class App extends Component {
           } />
           <Route path='/music-portal' element={
             <React.Fragment >
-              {this.state.token ? <MusicPortal data={this.state.topData} pushData={this.handleData} token={this.state.token} /> : null}
+              {this.state.token ? <MusicPortal user_id={this.state.user_id} data={this.state.topData} pushData={this.handleData} token={this.state.token} /> : null}
 
             </React.Fragment>
           } />

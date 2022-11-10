@@ -10,7 +10,7 @@ console.log(this.props.topUserData)
     let topResults = this.props.topUserData.map((item,index) => {
       return ( 
 
-        item.duration_ms ? <UserOutput ArtistName={item.name} counter={index+1} TrackArtist={item.artists[0].name}/> : <UserOutput ArtistName={item.name} counter={index+1} TrackArtist=''/>)
+        item.duration_ms ? <UserOutput user_id={this.props.user_id}ArtistName={item.name} counter={index+1} TrackArtist={item.artists[0].name} id={item.id} value={[item.name, item?.artists[0]?.name, item.uri]}/> : <UserOutput ArtistName={item.name} counter={index+1} id={item.id}TrackArtist='' value=''user_id={this.props.user_id}/>)
      
       
     })
@@ -24,9 +24,17 @@ console.log(this.props.topUserData)
             Your Top Results
           </Accordion.Header>
           <Accordion.Body className={styles['text']}>
-
+          <table>
+                <thead className={styles['textSmall']}>
+                  <tr>
+                    <th>Results</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
 
             {topResults}
+                          </table>
 
 
           </Accordion.Body>

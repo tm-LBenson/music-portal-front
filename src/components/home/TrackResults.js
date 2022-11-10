@@ -39,7 +39,7 @@ export default class TrackResults extends Component {
   render() {
     let topSongTracks = this.props?.topTracks?.tracks?.items?.map(item => {
       return (
-        <tr className={styles['tr-trackdata']} key={item.id}>
+        <tr  key={item.id}>
           <td>
             <div>{item.name}</div>
             <div>{item?.artists[0]?.name}</div>
