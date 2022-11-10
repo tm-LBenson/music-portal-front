@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Dropdown } from 'react-bootstrap';
 import axios from 'axios'
+import styles from '../stylesheets/MusicPortal.module.css'
 
 
 
@@ -37,9 +38,9 @@ export default class Usertop25 extends Component {
       .then(data => this.setState({
         UserTop: data.data
       },
-      () => {
-        this.props.handleData(this.state.UserTop)
-      } ))
+        () => {
+          this.props.handleData(this.state.UserTop)
+        }))
 
       .catch(error => console.log(error))
 
@@ -66,42 +67,43 @@ export default class Usertop25 extends Component {
       <React.Fragment>
         <p>Your Favorites!</p>
         <Form onSubmit={this.getData}>
-          <Form.Group className="mb-3" controlId="Type">
+          <section className={styles['drop']}>
+            <Form.Group className="mb-3" controlId="Type">
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  Type
+                </Dropdown.Toggle>
 
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Type
-              </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={() => this.setState({ type: 'artists' })} href="#sel-1">Artists</Dropdown.Item>
+                  <Dropdown.Item onClick={() => this.setState({ type: 'tracks' })} href="#sel-2">Tracks</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
 
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={() => this.setState({ type: 'artists' })} href="#sel-1">Artists</Dropdown.Item>
-                <Dropdown.Item onClick={() => this.setState({ type: 'tracks' })} href="#sel-2">Tracks</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Form.Group>
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="TimeRange">
+            <Form.Group className="mb-3" controlId="TimeRange">
 
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Time Range
-              </Dropdown.Toggle>
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  Time Range
+                </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={() => this.setState({ timeRange: 'short_term' })} href="#sel-1">Past Month</Dropdown.Item>
-                <Dropdown.Item onClick={() => this.setState({ timeRange: 'medium_term' })} href="#sel-2">Past 6 Months</Dropdown.Item>
-                <Dropdown.Item onClick={() => this.setState({ timeRange: 'long_term' })} href="#sel-3">Past 3 Years</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Form.Group>
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={() => this.setState({ timeRange: 'short_term' })} href="#sel-1">Past Month</Dropdown.Item>
+                  <Dropdown.Item onClick={() => this.setState({ timeRange: 'medium_term' })} href="#sel-2">Past 6 Months</Dropdown.Item>
+                  <Dropdown.Item onClick={() => this.setState({ timeRange: 'long_term' })} href="#sel-3">Past 3 Years</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Form.Group>
+          </section>
 
-
-          <Button variant="primary" type="submit">
+          <Button className={styles.button} variant="primary" type="submit">
             Submit
           </Button>
           <Form.Group className="mb-3" ></Form.Group>
         </Form>
-      </React.Fragment>
+      </React.Fragment >
     )
   }
 }
