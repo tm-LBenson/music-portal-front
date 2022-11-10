@@ -49,7 +49,13 @@ export default class CustomModal extends Component {
       await axios({
         method: 'patch', //you can set what request you want to be
         url: url,
-        data: { user_notes: data },
+        data: {
+          title: this.state.song.title,
+          artist: this.state.song.artist,
+          user_id: this.state.song.user_id,
+          img_url: this.state?.song?.img_url || null,
+          user_notes: data
+        },
         headers: {}
       })
       this.getSong()
@@ -104,7 +110,7 @@ export default class CustomModal extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>{this.state?.song?.user_note}</p>
+            <p>{this.state?.song?.user_notes}</p>
             {this.state.addNote ? <div className={styles['form-group']}> <form onSubmit={this.submitNotes} className={styles['form']}>
               <label>
                 Add a note
