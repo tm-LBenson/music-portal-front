@@ -1,15 +1,22 @@
 import React, { Component } from 'react'
-import { Accordion } from 'react-bootstrap'
 import axios from 'axios';
+import styles from '../stylesheets/Customtrack.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus } from '@fortawesome/free-solid-svg-icons';
+
 
 export default class Customtrack extends Component {
   constructor() {
     super()
-    this.state ={ }
+    this.state = {}
 
   }
 
-   getPlaylist = async () => {
+  removeFromPlaylist = (e) => {
+    console.log(e.target.value)
+  }
+
+  getPlaylist = async () => {
     try {
       const url = `http://localhost:3001/play-list/${this.props.user_id}`
       const data = await axios({
@@ -23,22 +30,46 @@ export default class Customtrack extends Component {
       console.error(error.message)
     }
   }
-  
- componentDidMount() {
-  setTimeout(this.getPlaylist,2000)
- }
+
+  componentDidMount() {
+    setTimeout(this.getPlaylist, 2000)
+  }
 
   render() {
     console.log(this.props)
     return (
-      <Accordion>
-        <Accordion.Item>
-          <Accordion.Header>
-            Test Item
-          </Accordion.Header>
-          <Accordion.Body>Body Test dshiufhdseawiufhedwiufheuwiohfewuiofheuiwhfuiewhfuiewhfuiewhfhewufhuwehfiuhewfiuhewfiuhew</Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
+      <table className={styles['table-trackdata']}>
+        <thead className={styles['thead-trackdata']}>
+          <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Play</th>
+            <th>Remove from Playlist</th>
+          </tr>
+        </thead>
+        {this.state?.playlist?.map(song => {
+          return (
+            <>
+              <tr>
+                <td>
+                  {song.title}
+                </td>
+                <td>
+                  {song.artist}
+                </td>
+                <td>
+                  <div className={styles['button-wrapper']}>
+                    <div className={styles['button-parent']}>
+                      <button value={song._id} onClick={this.removeFromPlaylist}></button>
+                      <FontAwesomeIcon icon={faMinus} />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </>
+          )
+        })}
+      </table>
     )
   }
 }

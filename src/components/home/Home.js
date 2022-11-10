@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import HeroTagLine from './HeroTagLine'
 import Customtrack from './Customtrack.js'
 import styles from '../stylesheets/Home.module.css'
-import Playlist from './Playlist'
+import PlaylistCards from './PlaylistCards'
 import Searchbar from './Searchbar'
 import axios from 'axios'
 import DailyHomeCard from './DailyHomeCard'
@@ -88,19 +88,15 @@ export default class Home extends Component {
           <div className={styles['hero__trending']}>TRENDING</div>
           <h2 className={styles['card__heading']}>{this.state.dailySongs?.message}</h2>
           <section className={styles['cards']}>
-
             {this.state?.dailySongs ? this.state.dailySongs.playlists.items.map(song => {
-              return <Playlist currentlyPlaying={this.getCurrentlyPlaying} token={this.props.token} key={song.id} songData={song} />
+              return <PlaylistCards currentlyPlaying={this.getCurrentlyPlaying} token={this.props.token} key={song.id} songData={song} />
             }) : null}
-
           </section>
         </section>
         <section className={styles['col-3']}>
           <div className={styles['search']}> < Searchbar token={this.props.token} user_id={this.props.user_id} /> </div>
-          <div className={styles['play-list']}>{this.props.user_id ? < Customtrack user_id={this.props.user_id}/> : null }</div>
+          <div className={styles['play-list']}>{this.props.user_id ? < Customtrack user_id={this.props.user_id} /> : null}</div>
         </section>
-
-
       </main>
     )
   }
