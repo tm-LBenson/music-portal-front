@@ -24,7 +24,7 @@ font-size: 4.2rem;
   align-items: center;
   text-align: center;
   display: flex;
-  gap: 20%;
+  gap: 10%;
   height: 100%;
   width: 100%;
   justify-content: center;
@@ -34,7 +34,7 @@ font-size: 4.2rem;
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 20%;
+  gap: 10%;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ font-size: 4.2rem;
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 20%;
+  gap: 10%;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -86,4 +86,10 @@ font-size: 4.2rem;
   margin-left: 50px;
   margin-right: 50px;
   width: 80%;
+}
+
+.img {
+  height: 178px;
+  width: 178px;
+  margin-bottom: 4px;
 }
