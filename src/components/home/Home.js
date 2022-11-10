@@ -81,7 +81,7 @@ export default class Home extends Component {
         </section>
         <section className={styles['col-3']}>
           <div className={styles['search']}> < Searchbar token={this.props.token} /> </div>
-          <div className={styles['play-list']}>< Customtrack /></div>
+          {/* <div className={styles['play-list']}>< Customtrack /></div> */}
         </section>
 
 

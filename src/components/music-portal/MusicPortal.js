@@ -24,13 +24,12 @@ export default class MusicPortal extends Component {
     this.setState({ data: topResults })
   }
 
-  handleRec = (data) => 
-  {
-    
+  handleRec = (data) => {
+
 
 
     let name = data.tracks.map(item => item)
-    this.setState({songRec: name})
+    this.setState({ songRec: name })
   }
 
 
@@ -42,32 +41,33 @@ export default class MusicPortal extends Component {
         <section className={styles['col-1']}>
 
 
-<div className={styles['play-list']}> <Usertop25 handleData={this.handleData} token={this.props.token}/></div>
-  
+          <div className={styles['play-list']}> <Usertop25 handleData={this.handleData} token={this.props.token} /></div>
 
-    <UserResults topUserData={this.state.data} />
-      </section>
-      <section className={styles['col-2']}>
-      <div>Column2</div>
-      <div className={styles['col-2-1']}>
-      < PortalForm token={this.props.token} 
-      handleRec={this.handleRec} pushData={this.props.pushData}/>
-      
 
-      <section className={styles['cards']}>
-            <div className={styles['card']}>< Recs songData={this.state.songRec} /></div>
+          <UserResults topUserData={this.state.data} />
+        </section>
+        <section className={styles['col-2']}>
+          <div className={styles['col-2-1']}>
+            < PortalForm token={this.props.token}
+              handleRec={this.handleRec} pushData={this.props.pushData} />
+
+
+          </div>
+          <section className={styles['cards']}>
+            <div className={styles['card']}>
+              < Recs songData={this.state.songRec} />
+            </div>
 
           </section>
-      </div>
-      </section>
-      <section className={styles['col-3']}>
-      <Container className={styles['placeholder']}>Place Holder</Container>
-      <Container className={styles['placeholder']}>Place Holder</Container>
-      <Container className={styles['placeholder']}>Place Holder</Container>
-      </section>
-      
-      
-</main>
+        </section>
+        <section className={styles['col-3']}>
+          <Container className={styles['placeholder']}>Place Holder</Container>
+          <Container className={styles['placeholder']}>Place Holder</Container>
+          <Container className={styles['placeholder']}>Place Holder</Container>
+        </section>
+
+
+      </main>
 
     )
   }
