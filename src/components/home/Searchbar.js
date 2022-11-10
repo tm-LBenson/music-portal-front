@@ -126,7 +126,7 @@ export default class Searchbar extends Component {
               Powered by Spotify ©
             </Form.Text>
             <Form.Group className="mb-3" ></Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="success" type="submit">
               Submit
             </Button>
           </Form.Group>
@@ -158,7 +158,7 @@ export default class Searchbar extends Component {
               Powered by Spotify ©
             </Form.Text>
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="success" type="submit">
             Submit
           </Button>
           <Form.Group className="mb-3" ></Form.Group>

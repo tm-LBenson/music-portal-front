@@ -7,12 +7,12 @@ export default class ArtistResults extends Component {
     let topTracks = this.props?.artistTopTracks?.tracks?.map(item => {
       return (
         /* The styling for this lives within 
-        src > components > */
-        <div className={styles['artist-results']}>{item.name}</div> 
+        src > components > stylesheets > TrackResults.module.css */
+        <div>{item.name}</div> 
       )
   });
   return(
-      <div>{topTracks}</div >
+      <div >{topTracks}</div>
     )
   }
 }
