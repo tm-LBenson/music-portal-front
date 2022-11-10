@@ -85,16 +85,16 @@
   padding: 5px;
   border-radius: 25px;
   border: none;
-  box-shadow: 3px 3px 3px #333;
+  box-shadow: 3px 3px 3px rgba(51, 51, 51, 0.651);
   transition: all 0.2s;
 }
 .modal__wrapper button:hover {
-  box-shadow: 3px 3px 4px rgba(51, 51, 51, 0.651);
-  transform: translateY(-3px);
+  box-shadow: 3px 3px 9px rgba(51, 51, 51, 0.651);
+  transform: translateY(-2px);
 }
 .modal__wrapper button:active {
-  box-shadow: 3px 3px 7px rgba(51, 51, 51, 0.434);
-  transform: translateY(-2px);
+  box-shadow: 3px 3px 7px rgba(51, 51, 51, 0.651);
+  transform: translateY(-1px);
 }
 .edit {
   background-color: var(--success);
