@@ -31,6 +31,7 @@ export default class TrackResults extends Component {
       }
     }
     addToPlaylist();
+    this.props.getSong();
   }
 
 

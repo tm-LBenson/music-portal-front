@@ -2,7 +2,7 @@ import styles from '../stylesheets/SplashPage.module.css'
 import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button'
 import videoBg from './assets/Vinyl.mp4'
-import logo from './assets/Logo.png'
+
 
 const CLIENT_ID = '75b90235ba3f4956834f605c46d9d923'
 const REDIRECT_URI = 'http://localhost:3000/'
@@ -31,7 +31,7 @@ export default class SplashPage extends Component {
 
 
         <div className={styles['login']}>
-          <img className={styles['logo']} src={logo} alt="logo" />
+      
           <div className={styles['overlay']}></div>
           <video className={styles['video']} src={videoBg} autoPlay loop muted />
           <div className={styles['content']}>

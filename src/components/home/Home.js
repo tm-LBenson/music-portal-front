@@ -6,6 +6,7 @@ import PlaylistCards from './PlaylistCards'
 import Searchbar from './Searchbar'
 import axios from 'axios'
 import DailyHomeCard from './DailyHomeCard'
+import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons'
 
 export default class Home extends Component {
   constructor() {
@@ -15,6 +16,12 @@ export default class Home extends Component {
 
     }
   }
+
+
+passFunction = (func) => this.setState({ getSong: func}, () =>  console.log(this.state.getSong))
+
+
+
 
   retrieveDailySongs = (dailySongs) => {
     this.setState({ dailySongs: dailySongs })
@@ -94,8 +101,8 @@ export default class Home extends Component {
           </section>
         </section>
         <section className={styles['col-3']}>
-          <div className={styles['search']}> < Searchbar token={this.props.token} user_id={this.props.user_id} /> </div>
-          <div className={styles['play-list']}>{this.props.user_id ? < Customtrack user_id={this.props.user_id} /> : null}</div>
+          <div className={styles['search']}> < Searchbar token={this.props.token} getSong={this.state.getSong}user_id={this.props.user_id} /> </div>
+          <div className={styles['play-list']}>{this.props.user_id ? < Customtrack passFunction={this.passFunction} user_id={this.props.user_id} /> : null}</div>
         </section>
       </main>
     )

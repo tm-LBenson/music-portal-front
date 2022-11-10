@@ -95,7 +95,6 @@ export default class Searchbar extends Component {
   getRec = async () => {
     let id = this.state.mapData;
     try {
-      console.log(id)
       let songArr = await axios({
         method: 'get',
         url: `https://api.spotify.com/v1/artists/${id}/top-tracks?market=US`,
@@ -113,6 +112,7 @@ export default class Searchbar extends Component {
     }
   }
   render() {
+console.log(this.props);
 
     return (
       <>
@@ -145,7 +145,7 @@ export default class Searchbar extends Component {
                 <th>Add to Playlist</th>
               </tr>
             </thead>
-              <TrackResults topTracks={this.state.trackData} user_id={this.props.user_id}/>
+              <TrackResults topTracks={this.state.trackData} getSong={this.props.getSong} user_id={this.props.user_id}/>
             </table>
             </Accordion.Body>
           </Accordion.Item>
@@ -169,7 +169,7 @@ export default class Searchbar extends Component {
           <Accordion.Item eventKey="0">
             <Accordion.Header>Top 10 Tracks from Artist</Accordion.Header>
             <Accordion.Body>
-              <ArtistResults artistTopTracks={this.state.songs} />
+              <ArtistResults artistTopTracks={this.state.songs}/>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
