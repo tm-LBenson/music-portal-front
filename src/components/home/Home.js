@@ -68,9 +68,8 @@ export default class Home extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.artist && prevState.artist !== this.state.artist) {
-      console.log(this.state.artist)
-      this.getLyrics();
+    if (this.props.playingStatus) {
+      setTimeout(this.getLyrics, 1500);
     }
 
   }

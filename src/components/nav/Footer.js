@@ -17,11 +17,8 @@ export default class Footer extends Component {
 
   }
 
-  componentDidUpdate() {
-    console.log(this.state)
-    if (this.state.playing) {
-      console.log('playing')
-    }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.playing !== prevState.playing) this.props.playingStatus(this.state.playing)
   }
   render() {
     return (
@@ -31,7 +28,7 @@ export default class Footer extends Component {
           token={this.state.token}
           showSaveIcon
           callback={state => {
-            if (!state.isPlaying) this.setState({ playing: false });
+            !state.isPlaying ? this.setState({ playing: false }) : this.setState({ playing: true });
           }}
           play={this.state.play}
           uris={this.props.trackUri ? this.props.trackUri : []}
