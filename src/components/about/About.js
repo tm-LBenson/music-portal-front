@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Developers from './Developers';
 import MissionStatment from './MissionStatement';
-import AboutBlank from './AboutBlank';
+// import AboutBlank from './AboutBlank';
 import PlaylistAccordion from './PlaylistAccordion';
 import styles from '../stylesheets/About.module.css';
 
