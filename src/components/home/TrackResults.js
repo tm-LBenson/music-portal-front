@@ -22,11 +22,11 @@ export default class TrackResults extends Component {
             title: title,
             uri: uri,
             artist: artist,
-            user_note: ''
+            user_notes: 'No notes added'
           },
           headers: {}
         })
-        this.setState({ trackResults: data.data }, () => console.log(this.state.TrackResults))
+        this.setState({ trackResults: data.data })
       } catch (error) {
         console.error(error.message)
       }

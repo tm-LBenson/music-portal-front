@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import styles from '../stylesheets/Customtrack.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Accordion } from 'react-bootstrap';
 
 export default class Customtrack extends Component {
