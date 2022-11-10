@@ -12,10 +12,7 @@ export default class Customtrack extends Component {
 
   }
 
-  removeFromPlaylist = (e) => {
-    console.log(e.target.value)
-  }
-
+  
   getPlaylist = async () => {
     try {
       const url = `http://localhost:3001/play-list/${this.props.user_id}`
@@ -31,8 +28,31 @@ export default class Customtrack extends Component {
     }
   }
 
+  removeFromPlaylist = (e) => {
+    e.preventDefault();
+    console.log(e.target.value)
+    const deleteSong = async () => {
+      
+      try { 
+        const url = `http://localhost:3001/delete/${e.target.value}`
+        const data = await axios({
+          method: 'delete', //you can set what request you want to be
+          url: url,
+          data: {},
+          headers: {}
+        })
+        this.getPlaylist()
+      } catch (error) {
+        console.error(error.message)
+      }
+    }
+    deleteSong()
+
+  }
+
   componentDidMount() {
     setTimeout(this.getPlaylist, 2000)
+    this.props.passFunction(this.getPlaylist)
   }
 
   render() {
