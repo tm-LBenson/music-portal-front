@@ -48,14 +48,14 @@ export default class MusicPortal extends Component {
         </section>
         <section className={styles['col-2']}>
 
-          <div className={styles['col-2-1']}>
+          <div>
             < PortalForm token={this.props.token}
               handleRec={this.handleRec} pushData={this.props.pushData} />
           </div>
           <section className={styles['cards']}>
-            <div className={styles['card']}>
+   
               < Recs songData={this.state.songRec} />
-            </div>
+       
 
           </section>
         </section>

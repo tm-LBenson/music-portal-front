@@ -9,7 +9,7 @@
 
 .col-1 {
   margin-top: 1rem;
-  width: 25%;
+  width: 20%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,14 +21,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  margin-top: 5rem;
   width: 40%;
   height: 100vh;
-  background-color: blue;
 }
 
-.col-2-1 {
-  height: 40vh;
-}
 
 .col-3 {
   display: flex;
@@ -36,7 +34,7 @@
   align-items: center;
   justify-content: space-around;
   margin-top: 1rem;
-  width: 30%;
+  width: 20%;
   height: 100vh;
   background-color: green;
 }
@@ -56,18 +54,31 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
-  background-color: azure;
+  flex-direction: row !important;
+  height: 80%;
   width: 100%;
-  gap: 15px;
+  gap: 50px;
   align-items: center;
-  justify-content: center;
+  margin-bottom: 10rem; 
 }
 
 .card {
-  width: 30%;
-  background-color: aqua;
-  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  height: 21rem;
+  width: 27%;
+  gap: 10rem !important;
+  align-items: center;
+  margin:  3%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+
+.cardbody{
+width: fit-content;
+height: fit-content;
+
 }
 
 .drop {
