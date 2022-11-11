@@ -127,80 +127,80 @@ export default class Portalsearch extends Component {
 
     return (
       <>
-      <h1 className={styles['header']}> Custom Recommendations</h1>
-      <Form onSubmit={this.getData}>
+        <h1 className={styles['header']}> Custom Recommendations</h1>
+        <Form onSubmit={this.getData}>
 
-        <Form.Group className={styles['forms']} className="mb-3" controlId="formArtist">
-          <Form.Label className={styles['textHigh']}>Pick a Artist/Band </Form.Label>
-          <Form.Control onInput={this.handleArtist} type="text"  className={styles['text']} placeholder="Enter Artist / Band Name" />
-          <Form.Text className="text-muted">
+          <Form.Group className={`${styles['forms']} mb-3`} controlId="formArtist">
+            <Form.Label className={styles['textHigh']}>Pick a Artist/Band </Form.Label>
+            <Form.Control onInput={this.handleArtist} type="text" className={styles['text']} placeholder="Enter Artist / Band Name" />
+            <Form.Text className="text-muted">
 
-          </Form.Text>
-        </Form.Group>
+            </Form.Text>
+          </Form.Group>
 
-        <Form.Group  className={styles['forms']} className="mb-3" controlId="formGenre">
-          <Form.Label className={styles['textHigh']}>Pick a Genre</Form.Label>
-          <Form.Control onInput={this.handleGenre} type="text"  className={styles['text']} placeholder="Enter a Genre" />
-          <Form.Text className="text-muted">
+          <Form.Group className={`${styles['forms']} mb-3`} controlId="formGenre">
+            <Form.Label className={styles['textHigh']}>Pick a Genre</Form.Label>
+            <Form.Control onInput={this.handleGenre} type="text" className={styles['text']} placeholder="Enter a Genre" />
+            <Form.Text className="text-muted">
 
-          </Form.Text>
-        </Form.Group>
-        <h2 className={styles['textHigh']}>Choose your attributes!</h2>
+            </Form.Text>
+          </Form.Group>
+          <h2 className={styles['textHigh']}>Choose your attributes!</h2>
 
           <section className={styles['drop']}>
 
-          <Dropdown>
-            <Dropdown.Toggle className={styles['text']}variant="success" id="dropdown-basic">
-              Dancy?
-            </Dropdown.Toggle>
+            <Dropdown>
+              <Dropdown.Toggle className={styles['text']} variant="success" id="dropdown-basic">
+                Dancy?
+              </Dropdown.Toggle>
 
-            <Dropdown.Menu className={styles['text']}>
-              <Dropdown.Item onClick={() => this.setState({ dnce: 0.8 })} href="#sel-1">Yes</Dropdown.Item>
-              <Dropdown.Item onClick={() => this.setState({ dnce: 0.2 })} href="#sel-2">No</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+              <Dropdown.Menu className={styles['text']}>
+                <Dropdown.Item onClick={() => this.setState({ dnce: 0.8 })} href="#sel-1">Yes</Dropdown.Item>
+                <Dropdown.Item onClick={() => this.setState({ dnce: 0.2 })} href="#sel-2">No</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-          <Dropdown>
-            <Dropdown.Toggle className={styles['text']}variant="success" id="dropdown-basic">
-              Vibe?
-            </Dropdown.Toggle>
+            <Dropdown>
+              <Dropdown.Toggle className={styles['text']} variant="success" id="dropdown-basic">
+                Vibe?
+              </Dropdown.Toggle>
 
-            <Dropdown.Menu className={styles['text']}>
-              <Dropdown.Item onClick={() => this.setState({ vibe: 0.8 })} href="#sel-1">Happy/Euphoric</Dropdown.Item>
-              <Dropdown.Item onClick={() => this.setState({ vibe: 0.2 })} href="#sel-2">Sad/Angry</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+              <Dropdown.Menu className={styles['text']}>
+                <Dropdown.Item onClick={() => this.setState({ vibe: 0.8 })} href="#sel-1">Happy/Euphoric</Dropdown.Item>
+                <Dropdown.Item onClick={() => this.setState({ vibe: 0.2 })} href="#sel-2">Sad/Angry</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-          <Dropdown>
-            <Dropdown.Toggle className={styles['text']} variant="success" id="dropdown-basic">
-              Loud?
-            </Dropdown.Toggle>
+            <Dropdown>
+              <Dropdown.Toggle className={styles['text']} variant="success" id="dropdown-basic">
+                Loud?
+              </Dropdown.Toggle>
 
-            <Dropdown.Menu className={styles['text']}>
-              <Dropdown.Item  onClick={() => this.setState({ loud: 0.8 })} href="#sel-1">Yes</Dropdown.Item>
-              <Dropdown.Item onClick={() => this.setState({ loud: 0.2 })} href="#sel-2">No</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+              <Dropdown.Menu className={styles['text']}>
+                <Dropdown.Item onClick={() => this.setState({ loud: 0.8 })} href="#sel-1">Yes</Dropdown.Item>
+                <Dropdown.Item onClick={() => this.setState({ loud: 0.2 })} href="#sel-2">No</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-          <Dropdown>
-            <Dropdown.Toggle className={styles['text']}variant="success" id="dropdown-basic">
-              Energy?
-            </Dropdown.Toggle>
+            <Dropdown>
+              <Dropdown.Toggle className={styles['text']} variant="success" id="dropdown-basic">
+                Energy?
+              </Dropdown.Toggle>
 
-            <Dropdown.Menu className={styles['text']}>
-              <Dropdown.Item onClick={() => this.setState({ energy: 0.8 })} href="#sel-1">More</Dropdown.Item>
-              <Dropdown.Item onClick={() => this.setState({ energy: 0.2 })} href="#sel-2">Less</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+              <Dropdown.Menu className={styles['text']}>
+                <Dropdown.Item onClick={() => this.setState({ energy: 0.8 })} href="#sel-1">More</Dropdown.Item>
+                <Dropdown.Item onClick={() => this.setState({ energy: 0.2 })} href="#sel-2">Less</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-        <Button variant="primary"className={styles['text']} type="submit">
-          Get Results!
-        </Button>
+            <Button variant="primary" className={styles['text']} type="submit">
+              Get Results!
+            </Button>
           </section>
 
 
-        <Form.Group className="mb-3" ></Form.Group>
-      </Form>
+          <Form.Group className="mb-3" ></Form.Group>
+        </Form>
       </>
     )
   }
