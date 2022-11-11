@@ -2,6 +2,7 @@ import styles from '../stylesheets/SplashPage.module.css'
 import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button'
 import videoBg from './assets/Vinyl.mp4'
+import spotify from './assets/Spot.png'
 
 
 const CLIENT_ID = '75b90235ba3f4956834f605c46d9d923'
@@ -36,10 +37,10 @@ export default class SplashPage extends Component {
           <video className={styles['video']} src={videoBg} autoPlay loop muted />
           <div className={styles['content']}>
             <p>Portal Inc ©</p>
-            <p>Welcomes you!</p>
-            <p>Powered with Spotify ©</p>
+        
+            <h3>Find Solace in Music...Embrace Harmony...</h3>
           </div>
-          <Button variant="primary" className={styles['button']} href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>Link your Spotify</Button>
+          <Button variant="primary" className={styles['button']} href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>Sign in with Spotify<img src={spotify}/></Button>
         </div>
       </>
 

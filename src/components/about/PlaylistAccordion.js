@@ -51,7 +51,80 @@ export default class AboutBlank extends Component {
           <Accordion.Item eventKey="3">
             <Accordion.Header>Zoe Playlist</Accordion.Header>
             <Accordion.Body>
-              Playlist goes here
+            1. Everything Is Alright
+Motion City Soundtrack
+
+2. The Permanent Rain
+The Dangerous Summer
+
+3. Eastbound & Down
+WSTR
+
+4. Baby Blue
+Grayscale
+
+5. Bad Idea
+Motion City Soundtrack
+
+6. Pulp Fiction
+Motion City Soundtrack
+
+7. Populace In Two
+From First To Last
+
+8. Timelines
+Motion City Soundtrack
+
+9. Floating Down The River
+Motion City Soundtrack
+
+10. Lonely Smiles
+WSTR
+
+11. Look at the Sky
+Porter Robinson
+
+12. Heavy Boots
+Motion City Soundtrack
+
+13. Atlantic
+Grayscale
+
+14. Featherweight
+WSTR
+
+15. My Favorite Accident
+Motion City Soundtrack
+
+16. The Sound of Reverie
+The Maine
+
+17. Radio Up
+Letter Kills
+
+18. Dirty Bombs
+Grayscale
+
+19. In Bloom
+Neck Deep
+
+20. L.G. FUAD
+Motion City Soundtrack
+
+21. All The Rage
+WSTR
+
+22. The Future Freaks Me Out
+Motion City Soundtrack
+
+23. Time of Our Lives
+Pitbull
+
+24. Memory
+Sugarcult
+
+25. Collapse
+Saosin
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>

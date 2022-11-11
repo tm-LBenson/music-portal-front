@@ -46,10 +46,12 @@ export default class TrackResults extends Component {
       return (
         <tr  key={item.id}>
           <td>
-            <div>{item.name}</div>
-            <div>{item?.artists[0]?.name}</div>
+            <div className={styles['text']}>{item.name}</div>
+            </td>
+            <td>
+            <div className={styles['text']}>{item?.artists[0]?.name}</div>
           </td>
-          <td>
+          <td className={styles['text']}>
             {item?.album?.name}
           </td>
           <td>
