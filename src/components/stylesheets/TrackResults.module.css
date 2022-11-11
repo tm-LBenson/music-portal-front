@@ -61,3 +61,41 @@ padding: 2px;
   font-size: 1.2rem;
   margin: 8px;
 }
+
+.head {
+    font-size: 2vw;
+text-align: center;
+  word-spacing: 5px;
+  color: rgb(178, 194, 194);
+}
+
+.forms {
+  margin-top: 1vw;
+}
+
+.text {
+  margin-top: .6vw;
+  font-size: 0.85vw;
+  margin-left: 0.4vw;
+  font-weight: 900;
+  margin-right: 0.4vw;
+}
+
+.but {
+  font-size: 0.85vw;
+  margin: 1vw;
+
+}
+
+.big {
+  height: 1vw;
+  margin-bottom: 10rem;
+  color: rgba(43, 96, 143, 0);
+  font-size: 60px;
+}
+
+.cord {
+  margin: 40px;
+  width: 90%;
+  margin-right: 60vw;
+}
