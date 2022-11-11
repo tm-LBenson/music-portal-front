@@ -53,7 +53,7 @@ export default class Home extends Component {
 
 
   getLyrics = async () => {
-    const url = `http://localhost:3001/lyrics?artist=${this.state.artist}&track=${this.state.track}`
+    const url = `${process.env.REACT_APP_BACKEND}/lyrics?artist=${this.state.artist}&track=${this.state.track}`
     const result = await axios({
       method: 'get', //you can set what request you want to be
       url: url,
@@ -103,15 +103,20 @@ export default class Home extends Component {
           </section>
         </section>
         <section className={styles['col-3']}>
-          <div className={styles['search']}> < Searchbar token={this.props.token} getSong={this.state.getSong} user_id={this.props.user_id} /> </div>
-          <div className={styles['play-list']}>{this.props.user_id ?
-            < Customtrack
-              currentlyPlaying={this.getCurrentlyPlaying}
-              showOrNot={this.getShowStatus}
-              passFunction={this.passFunction}
-              token={this.props.token}
+          <div className={styles['search']}>
+            < Searchbar token={this.props.token}
+              getSong={this.state.getSong}
               user_id={this.props.user_id} />
-            : null}</div>
+          </div>
+          <div className={styles['play-list']}>
+            {this.props.user_id ?
+              < Customtrack
+                currentlyPlaying={this.getCurrentlyPlaying}
+                showOrNot={this.getShowStatus}
+                passFunction={this.passFunction}
+                token={this.props.token}
+                user_id={this.props.user_id} />
+              : null}</div>
         </section>
       </main>
     )

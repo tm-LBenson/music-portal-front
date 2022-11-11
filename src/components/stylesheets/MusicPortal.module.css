@@ -1,3 +1,8 @@
+body {
+  background-color: rgb(5, 5, 5);
+  height: 200vh;
+}
+
 .wrapper {
   display: flex;
   width: 100%;
@@ -6,32 +11,32 @@
   margin-bottom: 10rem;
 }
 
-
-
 .col-1 {
-  margin-top: 1rem;
+  z-index: 0;
+  padding-top: 72px;
   width: 25%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .col-2 {
+  padding-top: 50px;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  margin-top: 5rem;
+  margin-top: 10rem;
   width: 40%;
   height: 100%;
-
 }
 
-
 .col-3 {
+  padding-top: 20px;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,8 +44,6 @@
   margin-top: 1rem;
   width: 20%;
   height: 100%;
-  background-color: green;
-
 }
 
 .header {
@@ -52,7 +55,7 @@
 
 .head {
   font-size: 2.86vw;
-text-align: center;
+  text-align: center;
   word-spacing: 5px;
   color: rgb(178, 194, 194);
 }
@@ -63,19 +66,16 @@ text-align: center;
 }
 
 .forms {
-   margin-top: 1vw;
+  margin-top: 1vw;
   height: 60vw;
 }
 
 .text {
-  margin-top: .3vw;
+  margin-top: 0.3vw;
   font-size: 0.85vw;
   margin-left: 0.4vw;
   font-weight: 900;
-
 }
-
-
 
 .textHigh {
   font-size: 1.4vw;
@@ -88,26 +88,25 @@ text-align: center;
 .textSmall {
   font-size: 0.7vw;
 
-  margin-top: .6vw;
+  margin-top: 0.6vw;
 
-  margin-bottom: .4vw;
-margin-left: .9vw;
+  margin-bottom: 0.4vw;
+  margin-left: 0.9vw;
 }
 
 .video {
   height: 40%;
   width: 100%;
-  background-color: aqua;
 }
 
 .hero__trending {
   height: 5rem;
-  background-color: red;
+
   width: 90%;
 }
 
 .left {
-margin-top: 5vw;
+  margin-top: 5vw;
 }
 
 .div {
@@ -125,7 +124,7 @@ margin-top: 5vw;
   width: 100%;
   gap: 50px;
   align-items: center;
-  margin-bottom: 10rem; 
+  margin-bottom: 10rem;
 }
 
 .card {
@@ -135,16 +134,14 @@ margin-top: 5vw;
   height: 16.8vw;
   gap: 10rem !important;
   align-items: center;
-  margin:  3%;
+  margin: 3%;
   display: inline-block;
   overflow: hidden;
 }
 
-
-.cardbody{
-width: fit-content;
-height: fit-content;
-
+.cardbody {
+  width: fit-content;
+  height: fit-content;
 }
 
 .drop {
@@ -161,18 +158,15 @@ height: fit-content;
 
 .search {
   width: 100%;
-  background-color: azure;
+
   height: 30%;
 }
 
 .play-list {
-  background-color: gray;
   height: 60%;
   width: 100%;
 }
-.placeholder {
-  background-color: fuchsia;
-}
+
 
 @media (width <= 750px) {
   .wrapper {

@@ -33,7 +33,7 @@ export default class Song extends Component {
 
   playFromDailyPlaylist = async (uri) => {
     try {
-      const data = await axios({
+      await axios({
         method: 'put', //you can set what request you want to be
         url: `https://api.spotify.com/v1/me/player/play?device_id=${this.state.deviceData}`,
         data: {

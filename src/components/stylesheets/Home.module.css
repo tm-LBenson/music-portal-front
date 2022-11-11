@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   height: 100%;
+  margin: 20rem 0 0 0;
   justify-content: space-around;
 }
 
@@ -40,8 +41,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  margin-top: 1rem;
+  justify-content: center;
   width: 25%;
   margin-right: 20px;
 }
@@ -82,8 +82,8 @@
 }
 
 .play-list {
-  height: 100%;
-  width: 100%;
+  height: 5%;
+  width: 25%;
 }
 
 .card__heading {
@@ -93,7 +93,6 @@
 .modal__wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .modal__wrapper button {
@@ -114,7 +113,7 @@
   transform: translateY(-1px);
 }
 .edit {
-  background-color: var(--success);
+  background-color: var(--nav-background);
   font-size: 1.3rem;
 }
 .delete {
@@ -128,7 +127,7 @@ textarea {
 
 .submit {
   width: 100%;
-  background-color: var(--success);
+  background-color: var(--nav-background);
   position: absolute;
   bottom: -3.5rem;
   left: 0;
@@ -155,6 +154,19 @@ textarea {
   box-shadow: 3px 3px 3px rgba(51, 51, 51, 0.651);
   transition: all 0.2s;
   font-size: 2rem;
+}
+
+.lyric__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-list {
+  width: 21%;
+  position: absolute;
+  top: 15rem;
 }
 
 @media (width <= 750px) {

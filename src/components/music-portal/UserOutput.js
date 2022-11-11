@@ -17,7 +17,7 @@ export default class UserOutput extends Component {
 
         const data = await axios({
           method: 'post', //you can set what request you want to be
-          url: 'http://localhost:3001/add-song',
+          url: `${process.env.REACT_APP_BACKEND}/add-song`,
           data: {
             user_id: this.props.user_id,
             title: title,
@@ -40,15 +40,15 @@ export default class UserOutput extends Component {
 
     return (
       <>
-      
+
         <tr key={this.props.id}>
           <td>
             <div className={styles['name']}> {this.props.counter}. {this.props.ArtistName}</div>
           </td>
           <td>
             <div className={styles['name']}> {this.props.TrackArtist}</div>
-            </td>
-            <td>
+          </td>
+          <td>
 
             <div className={styles['button-wrapper']}>
               <div className={styles['button-parent']}>

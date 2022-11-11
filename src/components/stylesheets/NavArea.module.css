@@ -8,7 +8,8 @@
   align-items: center;
   justify-content: space-between;
   box-shadow: 3px 3px 6px #333;
-  z-index: 5000 !important;
+  z-index: 1 !important;
+  position: fixed;
 }
 
 .logo {

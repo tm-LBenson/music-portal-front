@@ -32,15 +32,15 @@ export default class SplashPage extends Component {
 
 
         <div className={styles['login']}>
-      
+
           <div className={styles['overlay']}></div>
           <video className={styles['video']} src={videoBg} autoPlay loop muted />
           <div className={styles['content']}>
             <p>Portal Inc ©</p>
-        
+
             <h3>Find Solace in Music...Embrace Harmony...</h3>
           </div>
-          <Button variant="primary" className={styles['button']} href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>Sign in with Spotify<img src={spotify}/></Button>
+          <Button variant="primary" className={styles['button']} href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>Sign in with Spotify<img alt='spotify logo' src={spotify} /></Button>
         </div>
       </>
 

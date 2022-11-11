@@ -17,7 +17,7 @@ export default class Auth extends Component {
     if (prevProps.code !== prevState.code) {
 
       axios
-        .post("http://localhost:3001/login", { code: this.state.code })
+        .post(`${process.env.REACT_APP_BACKEND}/login`, { code: this.state.code })
         .then(res => {
           this.setState({
             code: '',
@@ -36,10 +36,10 @@ export default class Auth extends Component {
       this.props.onGetToken(this.state.accessToken) // SENDING ACCESS TOKEN TO PARENT ELEMENT
     }
     if (!this.state.refreshToken || !this.state.expiresIn) return
-  
+
     const interval = setInterval(() => {
       axios
-        .post("http://localhost:3001/refresh", {
+        .post(`${process.env.REACT_APP_BACKEND}/refresh`, {
           refreshToken: this.state.refreshToken,
         })
         .then(res => {

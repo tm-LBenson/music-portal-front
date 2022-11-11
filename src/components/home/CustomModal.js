@@ -12,7 +12,7 @@ export default class CustomModal extends Component {
     const deleteSong = async () => {
 
       try {
-        const url = `http://localhost:3001/delete/${this.props._id}`
+        const url = `${process.env.REACT_APP_BACKEND}/delete/${this.props._id}`
         await axios({
           method: 'delete', //you can set what request you want to be
           url: url,
@@ -29,7 +29,7 @@ export default class CustomModal extends Component {
   getSong = async () => {
 
     try {
-      const url = `http://localhost:3001/get-song/${this.props._id}`
+      const url = `${process.env.REACT_APP_BACKEND}/get-song/${this.props._id}`
       const data = await axios({
         method: 'get', //you can set what request you want to be
         url: url,
@@ -45,7 +45,7 @@ export default class CustomModal extends Component {
   addNote = async (data) => {
 
     try {
-      const url = `http://localhost:3001/add-comment/${this.props._id}`
+      const url = `${process.env.REACT_APP_BACKEND}/add-comment/${this.props._id}`
       await axios({
         method: 'patch', //you can set what request you want to be
         url: url,
