@@ -1,0 +1,40 @@
+/* player wrapper */
+.PlayerRSWP {
+  background-color: var(--footer-background) !important;
+  z-index: 0 !important;
+}
+
+._SliderRSWP {
+  z-index: 0 !important;
+}
+
+/* player slider */
+._SliderRSWP > div > div {
+  z-index: 0 !important;
+}
+
+/* slider handle */
+span[aria-label='slider handle'] {
+  z-index: 0 !important;
+}
+
+/* song details area */
+._InfoRSWP {
+  z-index: 0 !important;
+}
+
+/* area around play button */
+._ControlsRSWP {
+  z-index: 0 !important;
+}
+
+/* svg icons: play button, volume, devices */
+path[fill='currentColor'] {
+  color: var(--footer-icons);
+  z-index: 0 !important;
+}
+
+/* area around icons */
+._ActionsRSWP {
+  z-index: 0 !important;
+}

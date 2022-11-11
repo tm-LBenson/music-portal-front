@@ -1,0 +1,78 @@
+.playlist-comp {
+  margin-top: 40%;
+}
+
+.table-trackdata {
+  width: 100%;
+}
+
+.tr-trackdata {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5%;
+  margin-top: 2%;
+}
+
+.tr-trackdata > td {
+  width: 30%;
+  font-size: 1.1rem;
+}
+
+.tbody-trackdata {
+  width: 100%;
+}
+
+.thead-trackdata__tr {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.button-parent {
+  width: 90%;
+  height: 100%;
+  position: relative;
+  font-size: 1.2rem;
+  padding-top: 5px;
+}
+
+.button-parent > button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  opacity: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: left;
+}
+.row td {
+  width: 30%;
+}
+.button-wrapper {
+  padding-right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button__parent {
+  position: relative;
+}
+.card__text-content--button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

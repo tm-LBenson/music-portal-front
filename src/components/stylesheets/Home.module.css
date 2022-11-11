@@ -1,0 +1,211 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 20rem 0 0 0;
+  justify-content: space-around;
+}
+
+.col-1 {
+  margin-top: 1rem;
+  width: 30%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.8rem;
+  overflow-y: scroll;
+  color: var(--drawer-text);
+}
+.lyric__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: left;
+}
+
+.col-1::-webkit-scrollbar {
+  display: none;
+}
+
+.col-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.col-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  margin-right: 20px;
+}
+
+.video {
+  height: 40%;
+  width: 100%;
+}
+
+.hero__trending {
+  margin-top: 2%;
+  height: 4rem;
+  font-size: 2.1rem;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80%;
+  width: 100%;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10rem;
+}
+
+.card {
+  width: 30%;
+  height: 25rem;
+}
+
+.search {
+  width: 100%;
+
+  height: 30%;
+}
+
+.play-list {
+  height: 5%;
+  width: 25%;
+}
+
+.card__heading {
+  color: var(--card-heading);
+}
+
+.modal__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__wrapper button {
+  margin: 5px;
+  width: 30%;
+  padding: 5px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 3px 3px 3px rgba(51, 51, 51, 0.651);
+  transition: all 0.2s;
+}
+.modal__wrapper button:hover {
+  box-shadow: 3px 3px 9px rgba(51, 51, 51, 0.651);
+  transform: translateY(-2px);
+}
+.modal__wrapper button:active {
+  box-shadow: 3px 3px 7px rgba(51, 51, 51, 0.651);
+  transform: translateY(-1px);
+}
+.edit {
+  background-color: var(--nav-background);
+  font-size: 1.3rem;
+}
+.delete {
+  background-color: var(--warning);
+  font-size: 1.2rem;
+}
+textarea {
+  height: 120px;
+  width: 150%;
+}
+
+.submit {
+  width: 100%;
+  background-color: var(--nav-background);
+  position: absolute;
+  bottom: -3.5rem;
+  left: 0;
+}
+.cancel {
+  background-color: var(--warning);
+  position: absolute;
+  bottom: 0;
+  bottom: -3.5rem;
+  right: 0;
+}
+.form-group {
+  position: relative;
+  margin-bottom: 4.8rem;
+}
+
+.lyrics__button {
+  margin: 5px;
+  margin-bottom: 5rem;
+  width: 50%;
+  padding: 5px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 3px 3px 3px rgba(51, 51, 51, 0.651);
+  transition: all 0.2s;
+  font-size: 2rem;
+}
+
+.lyric__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-list {
+  width: 21%;
+  position: absolute;
+  top: 15rem;
+}
+
+@media (width <= 750px) {
+  .wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .search {
+    height: 20rem;
+  }
+
+  .play-list {
+    margin-top: 100%;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    height: 300vh;
+  }
+  .card {
+    width: 50%;
+    height: 30rem;
+  }
+  .col-1 {
+    margin-top: 5rem;
+    width: 100%;
+    height: 150vh;
+  }
+  .video {
+    height: 50%;
+  }
+  .col-2 {
+    margin-top: 5rem;
+    width: 100%;
+  }
+  .col-3 {
+    margin-top: 5rem;
+    width: 100%;
+  }
+}

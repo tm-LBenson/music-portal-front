@@ -1,0 +1,107 @@
+.table-trackdata {
+  width: 100%;
+}
+
+.tr-trackdata {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.tr-trackdata > td {
+  width: 30%;
+  font-size: 1.2rem;
+}
+
+.name {
+  margin-top: 0.9vw;
+  font-size: 0.85vw;
+  margin-left: 0.1vw;
+  font-weight: 900;
+}
+
+.tbody-trackdata {
+  width: 100%;
+  padding: 2px;
+}
+
+.thead-trackdata > tr {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.button-parent {
+  width: 10px;
+  height: 10px;
+  position: relative;
+}
+
+.button-parent > button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  opacity: 0;
+}
+
+.button-wrapper {
+  padding-right: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.artist-results {
+  font-size: 1.2rem;
+  margin: 8px;
+}
+
+.head {
+  font-size: 2vw;
+  text-align: center;
+  word-spacing: 5px;
+  color: rgb(178, 194, 194);
+}
+
+.forms {
+  margin-top: 1vw;
+}
+
+.text {
+  margin-top: 0.6vw;
+  font-size: 0.85vw;
+  margin-left: 0.4vw;
+  font-weight: 900;
+  margin-right: 0.4vw;
+}
+
+.but {
+  font-size: 0.85vw;
+  margin: 1vw;
+  background-color: var(--nav-background) !important;
+  color: #333;
+  transition: all 0.2s;
+}
+
+.but:hover {
+  color: #555;
+  box-shadow: 3px 3px 8px #333;
+  transform: translateY(-3px);
+}
+.big {
+  height: 1vw;
+  color: rgba(43, 96, 143, 0);
+  font-size: 60px;
+}
+
+.cord {
+  margin: 40px;
+  width: 90%;
+  margin-right: 60vw;
+}

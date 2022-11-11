@@ -1,0 +1,102 @@
+.About main {
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.about-cont-1 {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.dev-cont-title {
+  margin-top: 20rem;
+  font-size: 4.2rem;
+}
+
+.dev-container {
+  margin-top: 0%;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  gap: 10%;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+.dev-row-1 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 10%;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-row-2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 10%;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-cont-2 {
+  align-items: center;
+  /* height: 100%; */
+  width: 50%;
+  justify-content: center;
+  gap: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-alert {
+  align-items: center;
+  margin-bottom: 15%;
+  margin-top: 5.5rem;
+  width: 567px;
+  height: 40%;
+  font-size: 1.3rem;
+  z-index: -1;
+}
+
+.about-blank {
+  width: 80%;
+  height: 40%;
+  background-color: rgb(38, 230, 99);
+}
+
+.about-cont-3 {
+  margin: 0px;
+  height: 110vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.playlist-accordion {
+  margin-left: -60px;
+  margin-right: 25px;
+  width: 80%;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  overflow-wrap: break-word;
+}
+
+.img {
+  height: 178px;
+  width: 178px;
+  margin-bottom: 4px;
+}

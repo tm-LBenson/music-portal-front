@@ -1,3 +1,14 @@
+# Portal-Inc
+
+![image](https://user-images.githubusercontent.com/105423307/200440643-15c2092a-9844-4fe0-a465-06c41baf3124.png)
+
+![image](https://user-images.githubusercontent.com/105423307/200441510-655f7747-998f-4f2b-b9e1-af1f5f63cc2d.png)
+
+
+## resources
+
+[Pure Drawer](https://mac81.github.io/pure-drawer/documentation.html) - Nav Drawer used
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
