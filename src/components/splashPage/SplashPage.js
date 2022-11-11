@@ -6,7 +6,7 @@ import spotify from './assets/Spot.png'
 
 
 const CLIENT_ID = '75b90235ba3f4956834f605c46d9d923'
-const REDIRECT_URI = 'http://localhost:3000/'
+const REDIRECT_URI = process.env.REACT_APP_FRONT
 const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize'
 const RESPONSE_TYPE = 'code'
 const SCOPE = [
