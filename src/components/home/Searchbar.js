@@ -116,8 +116,8 @@ export default class Searchbar extends Component {
     return (
       <>
 
-        <h1 className={styles['head']} >Search for your Favortite Songs or Artists top Tracks</h1>
-        <Form  className={styles['forms']} onSubmit={this.getDataSong}>
+        <h1 className={styles['head']} >Search for your Favorite Songs or Artists top Tracks</h1>
+        <Form className={styles['forms']} onSubmit={this.getDataSong}>
           <Form.Group className="mb-3" controlId="songInfo">
 
             <Form.Control className={styles['text']}
@@ -133,7 +133,7 @@ export default class Searchbar extends Component {
 
         <Form className={styles['forms']} onSubmit={this.getDataArtists}>
           <Form.Group className="mb-3" controlId="atistInfo">
-            
+
             <Form.Control className={styles['text']} onInput={this.handleArtist} type="input" placeholder="Enter Artist / Band Name" />
             <Form.Text className="text-muted">
 
@@ -145,7 +145,7 @@ export default class Searchbar extends Component {
           </Button>
         </Form>
 
-        <Accordion  className={styles['cord']} defaultActiveKey={['0']} alwaysOpen >
+        <Accordion className={styles['cord']} defaultActiveKey={['0']} alwaysOpen >
           <Accordion.Item eventKey="0">
             <Accordion.Header>Top 3 Song Results</Accordion.Header>
             <Accordion.Body>

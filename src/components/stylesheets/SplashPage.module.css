@@ -6,18 +6,16 @@
   align-items: center;
   flex-direction: column;
   gap: 50px;
- 
 }
 
 .button {
-position: relative;
+  position: relative;
   top: 0;
   width: 40rem;
   height: 10%;
   display: flex;
-align-items: center;
+  align-items: center;
   background-color: rgb(0, 255, 140);
-  ;
   color: black;
   font-style: normal;
   font-weight: 900;
@@ -30,13 +28,11 @@ align-items: center;
   font-size: 2rem !important;
   text-align: center !important;
   padding-left: 5rem;
-
 }
 
-.button>img{
-right: 14.8rem;
-position: absolute;
-
+.button > img {
+  right: 14.8rem;
+  position: absolute;
 }
 
 .video {
@@ -44,7 +40,7 @@ position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-position: absolute;
+  position: absolute;
 }
 
 .content {
@@ -58,10 +54,9 @@ position: absolute;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   z-index: 2;
-
 }
 
-.content>p {
+.content > p {
   font-size: 2.5rem;
   font-family: serif;
 }
@@ -71,7 +66,6 @@ position: absolute;
   font-family: sans-serif;
 }
 
-
 .overlay {
   position: absolute;
   z-index: -3;
@@ -79,9 +73,7 @@ position: absolute;
   left: 0;
   width: 100%;
   height: 115%;
-  background-color: rgba(0, 0, 0, .5);
-
-
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .logo {

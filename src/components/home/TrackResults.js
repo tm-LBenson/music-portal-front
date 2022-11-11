@@ -11,7 +11,7 @@ export default class TrackResults extends Component {
   }
 
 
-  
+
 
 
   addToPlaylist = (e) => {
@@ -21,7 +21,7 @@ export default class TrackResults extends Component {
 
         const data = await axios({
           method: 'post', //you can set what request you want to be
-          url: 'http://localhost:3001/add-song',
+          url: `${process.env.REACT_APP_BACKEND}/add-song`,
           data: {
             user_id: this.props.user_id,
             title: title,
@@ -44,11 +44,11 @@ export default class TrackResults extends Component {
   render() {
     let topSongTracks = this.props?.topTracks?.tracks?.items?.map(item => {
       return (
-        <tr  key={item.id}>
+        <tr key={item.id}>
           <td>
             <div className={styles['text']}>{item.name}</div>
-            </td>
-            <td>
+          </td>
+          <td>
             <div className={styles['text']}>{item?.artists[0]?.name}</div>
           </td>
           <td className={styles['text']}>

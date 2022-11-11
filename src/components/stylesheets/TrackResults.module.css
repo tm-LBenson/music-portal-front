@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.tr-trackdata{
+.tr-trackdata {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -11,23 +11,23 @@
 }
 
 .tr-trackdata > td {
-width: 30%;
-font-size: 1.2rem;
+  width: 30%;
+  font-size: 1.2rem;
 }
 
 .name {
-  margin-top: .9vw;
+  margin-top: 0.9vw;
   font-size: 0.85vw;
   margin-left: 0.1vw;
   font-weight: 900;
 }
 
 .tbody-trackdata {
-width: 100%;
-padding: 2px;
+  width: 100%;
+  padding: 2px;
 }
 
-.thead-trackdata > tr{
+.thead-trackdata > tr {
   display: flex;
   justify-content: space-between;
   font-size: 1.4rem;
@@ -44,8 +44,8 @@ padding: 2px;
   position: absolute;
   width: 100%;
   height: 100%;
-  right:0;
-  top:0;
+  right: 0;
+  top: 0;
   padding: 5px;
   opacity: 0;
 }
@@ -63,8 +63,8 @@ padding: 2px;
 }
 
 .head {
-    font-size: 2vw;
-text-align: center;
+  font-size: 2vw;
+  text-align: center;
   word-spacing: 5px;
   color: rgb(178, 194, 194);
 }
@@ -74,7 +74,7 @@ text-align: center;
 }
 
 .text {
-  margin-top: .6vw;
+  margin-top: 0.6vw;
   font-size: 0.85vw;
   margin-left: 0.4vw;
   font-weight: 900;
@@ -84,12 +84,18 @@ text-align: center;
 .but {
   font-size: 0.85vw;
   margin: 1vw;
-
+  background-color: var(--nav-background) !important;
+  color: #333;
+  transition: all 0.2s;
 }
 
+.but:hover {
+  color: #555;
+  box-shadow: 3px 3px 8px #333;
+  transform: translateY(-3px);
+}
 .big {
   height: 1vw;
-  margin-bottom: 10rem;
   color: rgba(43, 96, 143, 0);
   font-size: 60px;
 }

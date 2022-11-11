@@ -58,7 +58,7 @@ export default class Customtrack extends Component {
 
   playFromPlaylist = async (uri) => {
     try {
-      const data = await axios({
+      await axios({
         method: 'put', //you can set what request you want to be
         url: `https://api.spotify.com/v1/me/player/play`,
         data: {
@@ -81,7 +81,7 @@ export default class Customtrack extends Component {
 
   getPlaylist = async () => {
     try {
-      const url = `http://localhost:3001/play-list/${this.props.user_id}`
+      const url = `${process.env.REACT_APP_BACKEND}/play-list/${this.props.user_id}`
       const data = await axios({
         method: 'get', //you can set what request you want to be
         url: url,

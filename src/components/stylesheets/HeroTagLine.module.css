@@ -1,10 +1,12 @@
 .tagline {
+  z-index: -1;
   margin-top: 2%;
   width: 100%;
   height: 25rem;
 }
 
 .carousel {
+  z-index: -2;
   height: 20rem;
 }
 .carousel__img--container {
@@ -12,6 +14,7 @@
 }
 
 .gradient {
+  z-index: -2;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -22,20 +25,24 @@
 }
 
 .carousel__img {
+  z-index: -2;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
 .carousel__caption {
+  z-index: 0;
   -webkit-text-stroke: 1.5px var(--drawerGreen);
   -webkit-text-fill-color: white;
 }
 
 .carousel__caption > h3 {
+  z-index: 0;
   font-size: 5rem;
 }
 .carousel__caption > p {
+  z-index: 0;
   font-size: 3.2rem;
   margin-bottom: 1.5rem;
 }

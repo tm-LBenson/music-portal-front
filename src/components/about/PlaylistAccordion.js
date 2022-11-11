@@ -11,7 +11,80 @@ export default class AboutBlank extends Component {
           <Accordion.Item eventKey="0">
             <Accordion.Header>Lewis Playlist</Accordion.Header>
             <Accordion.Body>
-              Playlist goes here
+              1. Herr Mannelig
+              Garmarna
+
+              2. The Cauldron Born
+              Damh The Bard
+
+              3. The Mystic's Dream
+              Loreena McKennitt
+
+              4. Spirit Of Albion
+              Damh The Bard
+
+              5. Orphan Tears
+              Your Favorite Martian
+
+              6. Ramunder
+              Garmarna
+
+              7. Sven i Rosengård
+              Garmarna
+
+              8. Två Systrar
+              Garmarna
+
+              9. All Is Found
+              Evan Rachel Wood
+
+              10. Vänner och Fränder
+              Garmarna
+
+              11. An Unhealthy Obsession
+              The Blake Robinson Synthetic Orchestra
+
+              12. Varulven
+              Garmarna
+
+              13. Bläck
+              Garmarna
+
+              14. Guds spelemän
+              Garmarna
+
+              15. Nicknackatory
+              Mr.B The Gentleman Rhymer
+
+              16. Palästinalied
+              Qntal
+
+              17. Robot Love
+              Klaypex
+
+              18. Valhalla Calling
+              Miracle Of Sound
+
+              19. Gjallarhorni
+              Corvus Corax
+
+              20. Until Then...
+              Sully Erna
+
+              21. Nåden
+              Garmarna
+
+              22. Brains
+              Klaypex
+
+              23. Dulcis Amor
+              Qntal
+
+              24. Night 13
+              Auri
+
+              25. Empty Walls
+              Serj Tankian
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
@@ -153,6 +226,7 @@ Lennon Stella
           <Accordion.Item eventKey="3">
             <Accordion.Header>Zoe Playlist</Accordion.Header>
             <Accordion.Body>
+
               <ul>
             <li>1. Everything Is Alright
 Motion City Soundtrack</li>
@@ -229,6 +303,7 @@ Sugarcult
 <li>25. Collapse
 Saosin</li>
 </ul>
+
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
