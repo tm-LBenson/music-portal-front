@@ -116,32 +116,47 @@ export default class Searchbar extends Component {
     return (
       <>
 
-
-        <Form onSubmit={this.getDataSong}>
+        <h1 className={styles['head']} >Search for your Favortite Songs or Artists top Tracks</h1>
+        <Form  className={styles['forms']} onSubmit={this.getDataSong}>
           <Form.Group className="mb-3" controlId="songInfo">
-            <Form.Label>Search for a song. </Form.Label>
-            <Form.Control
+
+            <Form.Control className={styles['text']}
               onInput={this.handleSong} type="input" placeholder="Enter Song Name" />
             <Form.Text className="text-muted">
-              Powered by Spotify ©
+
             </Form.Text>
-            <Form.Group className="mb-3" ></Form.Group>
-            <Button variant="success" type="submit">
+            <Button className={styles['but']} variant="success" type="submit">
               Submit
             </Button>
           </Form.Group>
         </Form>
 
-        <Accordion defaultActiveKey={['0']} alwaysOpen >
+        <Form className={styles['forms']} onSubmit={this.getDataArtists}>
+          <Form.Group className="mb-3" controlId="atistInfo">
+            
+            <Form.Control className={styles['text']} onInput={this.handleArtist} type="input" placeholder="Enter Artist / Band Name" />
+            <Form.Text className="text-muted">
+
+            </Form.Text>
+          </Form.Group>
+          <Button className={styles['but']} variant="success" type="submit">
+            Submit
+
+          </Button>
+        </Form>
+
+        <Accordion  className={styles['cord']} defaultActiveKey={['0']} alwaysOpen >
           <Accordion.Item eventKey="0">
             <Accordion.Header>Top 3 Song Results</Accordion.Header>
             <Accordion.Body>
               <table className={styles['table-trackdata']}>
-                <thead className={styles['thead-trackdata']}>
+                <thead className={styles['text']}>
                   <tr>
                     <th>Title</th>
+                    <th>Artist</th>
                     <th>Album</th>
                     <th>Add to Playlist</th>
+
                   </tr>
                 </thead>
                 <TrackResults topTracks={this.state.trackData} getSong={this.props.getSong} user_id={this.props.user_id} />
@@ -150,28 +165,16 @@ export default class Searchbar extends Component {
           </Accordion.Item>
         </Accordion>
 
-        <Form onSubmit={this.getDataArtists}>
-          <Form.Group className="mb-3" controlId="atistInfo">
-            <Form.Label>Artist / Band Name</Form.Label>
-            <Form.Control onInput={this.handleArtist} type="input" placeholder="Enter Artist / Band Name" />
-            <Form.Text className="text-muted">
-              Powered by Spotify ©
-            </Form.Text>
-          </Form.Group>
-          <Button variant="success" type="submit">
-            Submit
-          </Button>
-          <Form.Group className="mb-3" ></Form.Group>
-        </Form>
 
-        <Accordion>
+        <Accordion className={styles['cord']}>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Top 10 Tracks from Artist</Accordion.Header>
             <Accordion.Body>
-              <ArtistResults artistTopTracks={this.state.songs} />
+              <ArtistResults className={styles['text']} artistTopTracks={this.state.songs} />
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
+        <div><p className={styles['big']}></p></div>
       </>
     );
   }
